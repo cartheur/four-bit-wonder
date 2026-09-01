@@ -1,0 +1,280 @@
+Welcome to Episode 6 of The Last Cybernetesist.
+This episode is called A Four-bit Wonder.
+In the last episode I talked about the early IBO ERS-triple-1, behavior diagrams, and about
+the value of making a machine legible rather than just an impressive work of art or technological
+sophistication.
+I agree that one of the deepest virtues a machine can have is intelligibility, not intelligibility
+because the fact of making a machine that makes it less interesting, but because it makes
+a traceable behavior, something that we can catalog and make answerable to the cognition
+that we expect from things and the expectations we place on objects, gives us some chance
+of saying what the system is doing, why it changes state, and how it regains coherence
+after disturbances.
+So this episode stage is the same concern, of course, like all the episodes, but I want
+to take it to a different place.
+A place where it gets more interesting because we're looking at things at a very high level
+of something as a finished product, and we're able to identify these certain features.
+So for our anticipations and expectations, we've got those things that we can lay out
+and see.
+But in so doing, other than the scripts themselves, we're obfuscating how this actually happens.
+So as you may or may not know, computers talk in binary, zeros and ones.
+It's in all the movies and a lot of people say clearly, I hope.
+So with the higher computing languages, assembly and whatever, it's C, fourth, Java, these are
+higher levels of abstraction from that.
+But at any point in time, the machines are running zeros and ones because you're dealing
+with silicone and the transistors and gates.
+So we have to always kind of keep that in mind.
+So the idea of understanding, okay, we have this higher level abstraction of behavior that
+has all the things we like about it, right?
+But now how does this come down to like zeros and ones?
+And instead of me trying to explain it or trying to believe that I think I know what
+I'm talking about by explaining it, I'm going to start discussing things in terms of what
+in terms of actual builds.
+And we're going to begin like this.
+So there's an interesting article I'd expect, I don't expect, I would anticipate people
+to read it would be interesting if you read that.
+It's an August, August 1950 astounding science fiction article.
+I just recently discovered that in the early 1950s, when artificial intelligence robotics
+and these kind of things were talked about from a scientific perspective, a lot of the
+authors of the time put them in science fiction magazines because that was the readership.
+So this particular article was called "How to Build a Thinking Machine" and it's written
+onto the pseudonym JJ coupling and was a physicist named John R. Pierce and he was fairly well
+placed in the physics community.
+So he was not summoned to the Saturday University or someone who was actually doing real physics
+but machines at the time.
+So a little bit of context from the late 1930s, early 40s into World War II, there was the
+from Turring's work up through the impetus of cybernetics from fighter.
+So by post World War II period, you had this kind of prehistory.
+On machines, so prior to World War II, and then you had the real history, which is what
+we're doing now since the second one was.
+So this is on the cusp of that, but I'll get to that in a minute.
+So what's interesting is about not just the machine idea that he talks about, it's a very
+short article with schematic so that always gives it a bit of credit.
+It's a skepticism that the author has about it.
+So coupling or Pierce was already pushing back against inflated claims about thinking
+machines in 1950, so this is August 1950.
+So he made the observation that people were actually building large electronic computers.
+So people that were building the computers at the time were pretty modest about the claims
+they wanted to make.
+The ones who knew something about it were making interesting claims and the people who
+nothing was just saying, whatever, making these really bold claims and, oh, it's EGI.
+Maybe not like that at that time.
+So it's that particular kind of behavior of humans has been going on the whole time in
+this field.
+So we shouldn't be surprised when we hear it now.
+But what's interesting about coupling, Pierce, is that the skepticism in there is not cynical
+-- he starts to talk about things in an architectural discipline.
+So the vision, so the idea of the optimism and the vision of creating new ideas is not
+shot down by a refusal to let the language out run the buildability.
+So what can you actually make that proves that?
+I think that's really interesting kind of a mix, which is why I mentioned in this podcast.
+Because it -- instead of looking at this great machine, AGI thingy, which we don't know what
+that even is, but you bring down it to a much narrower and better set of questions like
+what would count even in rough forms as a machine that learns.
+So what are those features that make that possible?
+So that question is still valid on this day, 27 August, 2026.
+It's never really left.
+Never left the field.
+It's still here running around.
+So looking at -- let's look at coupling first.
+He answers it in a very plain way.
+So a machine should not be entirely predictable, right?
+It should contain some random elements.
+That's something we already kind of know about.
+So it should not learn from say one lucky success and say, oh, that's great.
+I'm going to stay there like in the zone.
+It should be shaped by repeated successful passages, you know, successful operations.
+And how he quantifies that and says, okay, what can we do with that?
+And he talks about things in mazes.
+And his discussion of mazes, in terms of binary, which has been interesting, but he talks about
+not just like a puzzle, but he talks about how the probabilities of things navigating
+the maze is on the base of the sequence, the bias of the ones and zeros, as they come
+in as they want to go from the left side to the right side.
+So you can see that the probability of going one way is more than the other just based on
+how the numbers are set up, right?
+So it's an architecture aware environment, and that's what that's all that really is.
+It's right there in front of us.
+So an environment one of my talking about, so we got branching choice error success memory
+revised conduct is really visible without not too much confusion.
+So such a world is constrained enough that we can tell what the machine is doing and
+when one routine begins to dominate another.
+So that's how you can start to understand what it actually is doing versus what the noise
+is telling you what you think it may be doing.
+That's why coupling is very, your peers is very important.
+So the skepticism doesn't shut the conversation down, but it leads them to an experimentation.
+During controlled settings, machines that can try, fail, receive, store biases and then
+gradually change behaviors over time again in time, remember that.
+So what we recognize, yeah, it kind of leads today to what we consider primitive machine
+learnings, machine learning setups, but it's not fanfare and ceremony.
+It's just sober down to earth.
+And that's what I admire about it is that down to earthness, it doesn't wave its arms
+around to make these crazy claims, it just describes a machine that adjusts.
+And that intellectual weight from coupling leads directly into what David O'Heisenman
+was doing with Rodney and the other robots in the early 1980s.
+I can't state that there's a direct influence, but Heisenman was well read and worked in
+areas of physics, and he might have been aware of couplings work, I mean, it's just kind
+of in that area.
+So I'm not saying a direct influence has been found, but that maze, the idea of the maze
+could be a coincidence, but maybe it's a point to a thought process that we humans also find
+ourselves in, it's a real subtle point, but that maybe by looking for an architectural
+based description that we ourselves discover that our thought processes are architecturally
+based in time.
+And the self similarity of that within ourselves and the machine that we are creating is very,
+I find it very comforting because then I'm not stepping outside myself too far, I'm using
+my mind to construct another mind, if you will, or another object that operates in an environment.
+So that gives me the logical progression of that, gives me the, that human thought is
+machine behavior.
+So there's, I mean, I don't know it for sure, right?
+But it, it puts me in that direction and wants me to keep working toward adaptation toward
+the idea of the maze.
+It's not something that I'm, I'm probably going to work on because I'm kind of interested,
+I have a different set of motivations, which I'll get into later episodes.
+But the idea of the constrained world of route choice, reinforcement, memory, and revision
+is an honest observation and we have to, we have to get to that point.
+So if you want to come into this field, this is where you got to start from.
+Coupling is the stripped down version of the problem.
+High zone is a more developed behavioral form.
+There's a lot of interesting features to it, but it's still the same basic question.
+So I've talked about the code base from high zoom in in the previous episode and I'll go
+into it later again, of course.
+But just to summarize quick, if the code, if the code that we're working on is organized
+around state route choice, consequence, retained history.
+So in both learning, so remembering and forgetting in both cases, an altered future behavior
+in a constrained environment, then that's, these are all in the same line of thought.
+So let me now pivot to something that we can do to start to test these ideas.
+I put together a device, I guess I can call it that, it's a handmade board, a little test
+platform.
+Let me start with a little bit of background.
+So when one wants to build a circuit that has a computer-like circuit, so what is a computer-like
+circuit?
+A computer-like circuit has integrated circuits, right, ICs.
+So these are these little, I got one in front of me here, I'm kind of looking at this and
+trying to describe it too, it's a chip, right, a piece of silicon, a plastic case, and it
+has what's called a dual inline package, so a dip, and there are pins going on either
+side.
+So this one I'm looking at here has 20, and then that's an octal receiver.
+I'm almost looking at some other ones here, this is like an NMOS ROM, this has got 28
+pins, and it's a little bit wider than the 20-pin, what I was just looking at.
+So you got these pins that are just coming off the bottom, and you think, okay, then what's
+next?
+So then the idea, when you look at a circuit board, you see a board, right, and all these
+lines running inside the board that's connecting these different ICs together and also some
+passive components.
+And we'll get into the details later, so don't worry about remembering for now.
+But the fundamental question that you always ask yourself, that you have to ask yourself
+at this point is, okay, well, how do I make the wiring pattern that it does something?
+And I must confess, when I started to work on this back in the day, I started actually
+building a circuit board, played a copper, a pen to scribe out the schematic itself,
+you know, the runs, the copper runs, and then dropped it in an acid bath to remove the parts
+that were not covered by the ink pen, and then put the board.
+Of course there were holes, of course, in that part, dropped it in and then, okay, there
+was.
+But I didn't like that process because it was just messy and ugly.
+So then the other, all the other option is a thing called wire wrapping.
+And wire wrapping is actually very sexy in that you have a, take the IC and put it in
+a socket called a wire wrap socket, and these come in all the different configurations that
+these ICs can plug into.
+And then you have a piece of just proto board, which is just basically a perforated board,
+so a piece of board that has holes in it and a certain spacing, so that matches the pitch,
+what we call, of the socket.
+You lay them in there, and then you use a special tool and a special kind of wire and
+you wrap, literally so wrapped, that's the second part, wire and you wrap it around the
+posts and then you create a pattern, that's all the wiring connections between the pins.
+And that's, I would recommend that because it's a very wholesome activity and you get
+to know the circuit you're building to the, to the ladder.
+So in the four-bit wonder, and there's a picture, there's a picture in the artwork,
+and I can drop some pictures on the sub-stack as well, it's two parts.
+So on the top left of it, it's a, it's a, it's a timing divider circuit.
+So there, I wanted to look at the problem, so in order to bring out coupling and the things
+that we've been talking about into something that we can actually test, I said, there's
+two parts, there's a frequency part where I want to divide the frequency into what I
+call an octave-based spectrum, and all those fancy words mean that's just, each frequency
+is mathematically related to the other one, and it's a simple ratio, like two, four, eight,
+like an octave and a piano, so that way it's really clean and obvious, these are obviously
+low-frequency things in the, in the Hertz ranges and low-killer Hertz.
+And a small memory environment, and that's what's on the, on the below part of that.
+So the idea is that you have a small machine that you can set patterns by hand, watching
+the appear in lights, reading simple values and checking with the memories, where there's
+holding, so I set, I set the switches, and you see the lamps light up, and then click
+if that's been saved and stored, so then there's the blue lights in the, in the, in the far
+corner there.
+And you see that something is stored in there, and then reiterate through the at, that way,
+so at the bottom left you'll see the red lamps to the left with the six switches, and that's
+the address, and I'll get into this again as we go on, that's the address, and the blue
+ones to the right are the what's saved in the, in the memory, what's present in the memory.
+Top right you have the switches, so you have chip select, which turns the switch off, off
+and on, to the bus, and then write or read, and then the push button, and let you do that.
+So that gives me a chance to get the idea of okay, what does memory look like, what is
+memory detected like, what does it actually mean, in the sense of what is, what memory
+is supposed to do, and how the machine is actually work, how the machine is doing that,
+so we got, so we got, so we got state right, the value of the state, so that's the, the
+content of the address, and the data itself, and because it's only four bits, so it's got
+four lights, that's pretty, pretty, pretty straightforward, and not too complicated.
+I can see the switching, retention, the timing, up in the other parts, read back, real signals
+on simple memory, and the, an almost amount of time it took to build it, versus the time
+of playing with it, it's, you can get, you can get the, you get the sense really, really
+fast, how it works, and you can also see how the, it's the two one one four, so it's a static
+ram four bit, static ram, one K, I believe, one kilobyte, you get the sense of when you
+power on power off that state that is retained in the silicon, so is there a charge thing
+that stays in there when it's not nothing, is there a corresponding value that always
+goes to before it, when it just starts up, which tends to be yes, but tends to be no,
+so there's something interesting in that, and the retention of that over time, and as
+long as the power applied, yeah, obviously it stays, the value stay in retention, so that's,
+you can prove that that actually is a, is a working thing, so we're not dealing with
+things in textbooks, not dealing with abstractions, we're dealing with real things, and we're
+saying that this is computing, we're building a computer, we're not only a computer yet,
+right, but we're doing the basics, okay, we need the timing, because we got to deal with
+the CPU, and I said I'll go on that later, and we have to have memory, but that's about
+having memory, because you got to have a bus, right, a bus to carry the transport, the values
+from the switch, so the switches have a voltage on them, by volts of course, and the bus sets
+up that, that, that channel that brings the, those values into, that is posited into the,
+into the static RAM, into the RAM, memory. Now, when we talk about the power briefly,
+and I have some photos of this, and maybe I'll put them on the sub-tech as well, is that
+I'm, I'm always looking at making things as least complicated as possible, because the
+idea of what I'm doing or what I want to achieve is so, I want to say complicated, perhaps
+it is, but it's to the point where I don't want to bias it with certain tendencies to
+think about things a certain way, so I want to remove all possibilities of, of weirdness
+if you will, so what I do is I have a little, at least QI batteries, I think it's supposed
+to be wireless powered, and have a USB, because it's a USB for a phone, and then the positive
+lines come out and just come to the two clip leads, and these clip leads are from an old
+HP, Hewlett package, signature analyzer, these things are really quite handy actually, when
+they repurposed, and there's a, there's a, it depends on the side, you can see it in
+the photograph, but where that voltage comes in, and that way I, I just have, I have a battery,
+just a mobile phone battery earlier, and a couple of clip leads that power the board,
+and I'm confident that there's nothing else that's coming around, that's coming around
+from the side, affecting the states, or any other external variable, so I'm isolating
+the system, making sure it has everything in, and being able to, I can now start to think
+about what variability that I can observe, and what innovations or novelties I can discover,
+and in this particular case, the four-bit wonder, and I think I'll also discuss this
+in a bit later as well, is that the randomness of its power on state is interesting, because
+that leads to coupling, right, so that talks about this necessity of randomness to set up
+certain things, and power off, the power on, is a state, that state change, because depending
+on how long the system has been powered off, maybe the electrons that are, that are still
+at the gates are still there, maybe they've dissipated, maybe they've not, maybe they're
+still stored in some of the capacitors that are up in here, so that way you can, you can
+see there's a randomness in it, maybe it's always the same, but if you do, if you take
+this circuit and turn it off and on ten times, you'll see that there are, it doesn't provide
+the same value every single time, and I think it's about two in ten, so one in five, I would
+say is the ratio to that that I've observed, I've not done a full-on experiment on, but
+that's what I would state, so that's something that you can't underestimate, and maybe that's
+a small thing, but that's something that you can find that you are not, as the engineer
+conditioning it to do, so something coming from outside, the random part, so it's coming
+from quote-unquote nature, right?
+That makes it more of a natural system, and things that we can start to build upon saying,
+okay, that, another we have that, then we can see that what we're trying to do is makeable,
+may not be easy, not costless, not guaranteed, but we can make it, and there are things that
+are built into it that are already, that are already natural to things, so we don't have
+to build it into the thing, some people do, but then, again, you're starting to buy a
+system, oh, it has to have that, but you start to go outside that and say no, let's see what's
+from the, well, the physics, right, so look from the world of nature, how it affects these
+systems because they're manufactured, they're made of elements, silicon dioxide, a copper,
+maybe aluminum, so metals, semiconductors, conductors, and these things have different
+properties, they're made in different ways, maybe the factory made that ship in a specific
+way, and maybe the weather was a certain way, so everything has a kind of a liberation to
+it that you don't have to control everything, and you can just observe a natural system,
+and that's what I think the four bit wonder is really about, it's a disciplinary device,
+but the arguments don't outrun the mechanism, so the memory is physical, control is visible,
+and it can help you to understand what's coming up later, and you can trust what you're looking
+at, because you're not making any crazy claims within your arms around, but you're just looking
+at it from what it, how it actually is, how it actually exists, and that I think is the
+great takeaway of this process, it becomes serious, so it behaves place to preserve checked and
+reintroduced on purpose, thank you for listening.
