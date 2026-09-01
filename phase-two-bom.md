@@ -57,8 +57,8 @@ until that behaviour has been chosen.
 
 | Qty | Part | Suggested value or specification | Purpose |
 | ---: | --- | --- | --- |
-| 4 | `100nF` ceramic capacitor | X7R or C0G, one per new required IC | Local decoupling for the `74LS393`, two `74LS157`s, and `74LS14`. |
-| 1 | Bulk capacitor | `10uF` to `47uF`, at least 10 V | Supports the expanded 5 V TTL rail. |
+| 4 | `100nF` ceramic capacitor | X7R or C0G, verify from passive stock | Local decoupling for the `74LS393`, two `74LS157`s, and `74LS14`. |
+| 1 | Bulk capacitor | `10uF` to `47uF`, at least 10 V; verify from passive stock | Supports the expanded 5 V TTL rail. |
 | 1 | Pull-up resistor | `4.7k` to `10k`; inventory has both values | Holds the automatic-counter reset inactive. |
 | 1 | Reset capacitor | `100nF` to `1uF`, selected with the pull-up | Optional power-on reset for the address counter. |
 | 1 | Advance pushbutton | Momentary, normally open | Optional manual `NEXT ADDRESS` control for test and demonstration. |
@@ -87,22 +87,25 @@ address behaviour.
 ## Basket Correlation and Purchase Summary
 
 The basket contains ten each of `SN74LS157N`, `SN74LS08N`, `SN74LS393N`, and
-`SN74LS153N`; retain the Phase 2 quantities in that order. These parts are not
-recorded in `inventory/list.csv`. The inventory already provides
+`SN74LS153N`; retain the Phase 2 quantities in that order. The inventory
+provides
 `10 x SN74LS14N`, `10 x SN74LS123N`, `60 x SN74LS04N`, ample 14- and 16-pin
 sockets, wire, and both `4.7k` and `10k` resistors. Stock also includes
 `24 x SN74LS139N`; five `SN74LS189AN` parts are on order, of which four are
-needed for the target map. Neither list includes the capacitors required by
-this phase.
+needed for the target map. Passive stock is expected to cover the listed
+capacitors; verify the required values before wiring.
 
-Buy for base Phase 2:
+## Final Phase 2 Allocation
 
-| Qty | Part |
-| ---: | --- |
-| 4 | `100nF` ceramic capacitors |
-| 1 | `10uF` to `47uF` bulk capacitor, at least 10 V |
-| 1 | Reset capacitor, `100nF` to `1uF` |
-| 1 | Debounce capacitor, `100nF`, only with the optional `NEXT ADDRESS` button |
+| Qty | Source | Part |
+| ---: | --- | --- |
+| 1 | Basket | `SN74LS393N` |
+| 2 | Basket | `SN74LS157N` |
+| 1 | Stock | `SN74LS14N` |
+| 4 | Passive stock | `100nF` ceramic capacitors |
+| 1 | Passive stock | `10uF` to `47uF` bulk capacitor, at least 10 V |
+| 1 | Passive stock | Reset capacitor, `100nF` to `1uF` |
+| 1 | Passive stock, optional | Debounce capacitor, `100nF`, for the `NEXT ADDRESS` button |
 
 Reserve from the basket: `1 x SN74LS393N` and `2 x SN74LS157N`. Reserve from
 inventory: `1 x SN74LS14N`, and optionally `1 x SN74LS123N`. If the optional

@@ -79,3 +79,17 @@ Orient every new DIP notch toward the top edge. Keep the `74LS125` nearest the
 `MM2114`, and keep `74LS173`, `74LS85`, and `74LS193` adjacent. Leave at least
 two clear perfboard rows between sockets and existing components for wire-wrap
 clearance, with a free edge column for `+5V`, ground, and decoupling wiring.
+
+## Phase 2: Autonomous Address Scanning
+
+Phase 2 extends the single-address hill climber into a 64-address autonomous
+sweep. A `74LS393` provides the six automatic address bits, while two
+`74LS157` multiplexers select either those bits or the existing front-panel
+address switches. The counter advances only after the current address reaches
+its target, retaining manual operation in `MANUAL` mode.
+
+Phase 2B is the optional independent-target expansion: four `74LS189AN` RAMs
+hold one four-bit target for each address. A `74LS139`, two `74LS153`s, and a
+`74LS04` select and restore the target value before it reaches the comparator.
+See [the Phase 2 BOM](phase-two-bom.md) for the finalized component allocation
+and implementation notes.

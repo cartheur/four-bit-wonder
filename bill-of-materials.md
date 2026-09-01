@@ -41,16 +41,18 @@ it writes manually in `MANUAL` and performs `LOAD TARGET / START` in `AUTO`.
 
 | Qty | Part | Suggested value or specification | Purpose |
 | ---: | --- | --- | --- |
-| 2 | Timing resistors | Select for approximately one phase per second | NE555 astable timing network |
-| 1 | Timing capacitor | Select with timing resistors | NE555 astable timing network |
+| 1 | NE555 timing resistor `RA` | `10k` | Autonomous-clock timing network |
+| 1 | NE555 timing resistor `RB` | `4.7k` in series with an in-stock `100k` linear trimmer | Adjustable autonomous-clock timing network |
+| 1 | Alternative fixed `RB` resistor | `68k`, in basket | Produces approximately one phase per second with a `10uF` timing capacitor |
+| 1 | Timing capacitor | `10uF`, verify from passive stock | NE555 astable timing network |
 | 1 | `100nF` capacitor per added IC | Ceramic, X7R or C0G | Local decoupling; 11 for the ten TTL ICs plus NE555 |
 | 1 | Bulk capacitor | `10uF` or greater, at least 10 V | Added-module 5 V rail support |
 | 3 | NPN transistor | `2N3904`, `BC547`, or similar | Low-side drivers for the existing bezel LEDs, if they are not already driven |
 | 3 | Base resistor | `10k` | NPN base current limit |
-| 3 | LED resistor | Determine from the bezel LEDs and supply; start around `2.2k` to `3.3k` | LED current limit if not already fitted |
+| 3 | LED resistor | `330 ohm`, stock has 90 | LED current limit for 5 V NPN low-side drivers |
 | 3 | Base-emitter pull-down resistor | `100k`, optional but recommended | Keeps LED drivers off during reset/power-up |
-| 2 | Mode-input pull-down resistor | `10k` | Defines `MANUAL=0` and `AUTO=0` in the selector's centre position |
-| 1 | Write-button debounce network | RC values chosen after checking the existing button wiring | Produces one clean auto-mode target/start event |
+| 2 | Mode-input pull-down resistor | `10k`, in basket | Defines `MANUAL=0` and `AUTO=0` in the selector's centre position |
+| 1 | Write-button debounce network | `10k` plus `100nF`, verify capacitor from passive stock | Produces one clean auto-mode target/start event |
 | as needed | DIP sockets | Appropriate 14-, 16-, and 20-pin sockets | Recommended for all new ICs |
 | as needed | Wire-wrap wire / hook-up wire | 30 AWG wire-wrap or insulated solid wire | Expansion-module wiring |
 
