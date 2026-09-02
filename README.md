@@ -86,7 +86,7 @@ optional and is not included here.
 | Base | `SN74LS367A` | 1 | 16-pin |
 | Base | [`uPB8226C`](datasheets/UPB8226C.pdf) | 1 | 16-pin |
 | Base | `MM2114A` | 1 | 18-pin |
-| Base | Existing switch/LED resistor strips | 2 | 24-pin wire-wrap |
+| Base | Panel switch/LED resistor strips | 2 | 24-pin wire-wrap |
 | Phase 1 | `NE555` | 1 | 8-pin |
 | Phase 1 | `74LS74` | 1 | 14-pin |
 | Phase 1 | `74LS08` | 1 | 14-pin |
@@ -113,19 +113,19 @@ optional and is not included here.
 | Phase 2 | 5 | `2 x 14-pin`, `3 x 16-pin` |
 | Base + Phase 1 + Phase 2 | 28 | `3 x 8-pin`, `9 x 14-pin`, `13 x 16-pin`, `1 x 18-pin`, `2 x 24-pin wire-wrap` |
 
-The base board already has two 24-pin wire-wrap sockets for switch and LED
-resistors; they are included in the base total above, not added expansion
-requirements. A replacement board should retain both strips. There are 12
-opposing pin pairs per socket, providing room for the 20-resistor panel
-baseline before timing, decoupling, and other circuit passives are added:
+The new-board base includes two 24-pin wire-wrap sockets for switch and LED
+resistors. They are included in the base total above, not added expansion
+requirements. There are 12 opposing pin pairs per socket, providing room for
+the 20-resistor panel baseline before timing, decoupling, and other circuit
+passives are added:
 
 | Panel use | Qty | Value |
 | --- | ---: | --- |
 | Six address switches and four data switches | 10 | `22k` pull-down resistor per switch |
 | Ten front-panel LEDs | 10 | `330 ohm` current-limit resistor per LED |
 
-The 20-resistor panel baseline fits on the two existing strips, leaving four
-paired positions spare. For the additions, use the small local wire-wrap
+The 20-resistor panel baseline fits on the two base strips, leaving four paired
+positions spare. For the additions, use the small local wire-wrap
 sockets shown in the layout: `P2` holds the NE555 timing network, `P3` the LED
 driver parts, `P4` the mode/button parts, and `P5` the Phase 2 reset/button
 parts. `P2` has its own local `555 R/C` zone beside the autonomous clock. Keep
@@ -142,6 +142,7 @@ also needs these dedicated footprints and service points:
 | 1 | `PS1` | USB power bank, regulated 5 V output | External primary supply and its integral over-current protection. |
 | 1 | `L1` | Repurposed USB-A lead, two HP5004A signature-analyzer clip leads | Delivers USB `VBUS` and ground to the board. |
 | 2 | `J0` | Vector `T46-3-9/C` wire-wrap terminals at the power-entry pair | Clip-lead landing points for `+5V` and ground. |
+| 1 set | `PH1` | Black 3D-printed switch/bezel holders ([FreeCAD/STL design pack](designs/README.md)) | Aligns and mounts the new-board panel switches and bezel LEDs. |
 | 3 | `Q1`-`Q3` | 3-pin TO-92 wire-wrap or terminal positions beside `P3` | LED low-side drivers. |
 | 22 | `C1`-`C22` | `100nF` ceramic, one at every core IC socket | Local supply decoupling for seven base, 11 Phase 1, and four Phase 2 ICs. |
 | 1 | `C23` | `47uF` to `100uF` at the `J0` power entry | Input bulk energy storage. |
@@ -150,6 +151,12 @@ also needs these dedicated footprints and service points:
 
 The selected replacement-board substrate is the Vector `8016-1` Circbord
 (`155 x 155 mm`), listed in the [Phase 1 BOM](phase-one-bom.md).
+
+The holder set can be printed from the available [FreeCAD and STL design
+pack](designs/README.md): two `4-bit-switcher` modules plus one each of
+`switches-indicator-four`, `led-indicator-2pb-switch`, `led-indicator-four`,
+and `led-indicator-three`. Reuse these established switch and bezel modules;
+adapt only their carrier placement and attachment to the Vector board.
 
 Do not fit the stocked [`MF-R050-AP`](datasheets/mf-r050-ap.pdf) to this build.
 Its `0.50 A` hold current, thermal derating, and up-to-`0.77 ohm` initial
@@ -179,7 +186,7 @@ Use the available AWG28 wire-wrap colors consistently:
 
 ### Pushbutton Contact Convention
 
-The existing `WRITE` button and the optional Phase 2 `NEXT ADDRESS` button are
+The new-board `WRITE` button and optional Phase 2 `NEXT ADDRESS` button use
 the same stocked pushbutton: **normally closed, open on press**. Wire each
 contact between its logic input and ground, with a `10k` pull-up and `100nF`
 capacitor from that input to ground. The released contact holds the input low;
@@ -187,10 +194,11 @@ pressing opens it so the pull-up takes it high. A `74LS14` then produces the
 active-low press event used by the controller. No normally-open replacement
 pushbuttons are required.
 
-See [the autonomous-addition write-up](four-bit-wonder-autonomous-addition.md)
-for the operating design, [the Phase 1 BOM](phase-one-bom.md) for the first
+See [the Machine Autonomous Version](machine-autonomous-version.md) for the
+current operating scope, [the Phase 1 BOM](phase-one-bom.md) for the first
 autonomous build, and [the Phase 2 BOM](phase-two-bom.md) for the address-scan
-expansion.
+expansion. The [incremental autonomous addition](four-bit-wonder-autonomous-addition.md)
+is retained only as a legacy original-board alternative.
 
 ## Blank-Board Layout
 
@@ -238,7 +246,7 @@ and run separate `+5V` and ground rails down both long board edges.
 
 Phase 2 extends the single-address hill climber into a 64-address autonomous
 sweep. A `74LS393` provides the six automatic address bits, while two
-`74LS157` multiplexers select either those bits or the existing front-panel
+`74LS157` multiplexers select either those bits or the manual front-panel
 address switches. The counter advances only after the current address reaches
 its target, retaining manual operation in `MANUAL` mode.
 

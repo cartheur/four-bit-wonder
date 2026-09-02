@@ -30,20 +30,26 @@ outputs leave room for later bus expansion.
 
 | Qty needed | Part | Status | Basket quantity | Role |
 | ---: | --- | --- | ---: | --- |
-| 1 | E-Switch `100SP1T1B1M3QEH` | In basket | 2 | Replaces the CS switch with `MANUAL / DISABLED / AUTO` selection |
+| 1 | E-Switch `100SP1T1B1M3QEH` | In basket | 2 | New-board `MANUAL / DISABLED / AUTO` mode selector. |
+| 1 set | Black 3D-printed switch/bezel holders ([design pack](designs/README.md)) | Available to print | N/A | Mounts and aligns the new-board panel switches and bezel LEDs. |
 
-This switch is SPDT `ON-NONE-ON`. Its existing-panel hole must be enlarged from
-`5.2 mm` to `6.35 mm`; orient its anti-rotation key against the holder edge.
-One purchased switch remains as a spare.
+This switch is SPDT `ON-NONE-ON` and needs a `6.35 mm` mounting hole in the
+new-board panel. Orient its anti-rotation key for access and wire-wrap
+clearance. One purchased switch remains as a spare.
 
-No new switch or pushbutton is needed. The existing write button is mode-gated:
-it writes manually in `MANUAL` and performs `LOAD TARGET / START` in `AUTO`.
+Print the holder set as two `4-bit-switcher` modules plus one each of
+`switches-indicator-four`, `led-indicator-2pb-switch`, `led-indicator-four`,
+and `led-indicator-three`. The FreeCAD source preserves the holder geometry;
+only the carrier placement and attachment need adapting to the Vector board.
+
+The new-board `WRITE` button is mode-gated: it writes manually in `MANUAL` and
+performs `LOAD TARGET / START` in `AUTO`.
 
 For the replacement board, use the same normally-closed, open-on-press
 connection as `NEXT ADDRESS`: the button input is grounded while released, and
 a `10k` pull-up makes it high when pressed. Debounce it with `100nF` to ground
-and use the `74LS14` to produce an active-low press event. The existing write
-button is the same stocked part and has this confirmed contact polarity.
+and use the `74LS14` to produce an active-low press event. The `WRITE` button
+is the same stocked part and has this confirmed contact polarity.
 
 ## Still Needed Outside the Basket
 
@@ -56,30 +62,30 @@ button is the same stocked part and has this confirmed contact polarity.
 | 1 | Timing capacitor | `10uF`, verify from passive stock | NE555 astable timing network |
 | 1 | `100nF` capacitor per added IC | Ceramic, X7R or C0G | Local decoupling; 11 for the ten TTL ICs plus NE555 |
 | 1 | Bulk capacitor | `10uF` or greater, at least 10 V | Added-module 5 V rail support |
-| 3 | NPN transistor | `2N3904`, `BC547`, or similar | Low-side drivers for the existing bezel LEDs, if they are not already driven |
+| 3 | NPN transistor | `2N3904`, `BC547`, or similar | Low-side drivers for the new-board panel LEDs, if they are not already driven |
 | 3 | Base resistor | `10k` | NPN base current limit |
 | 3 | LED resistor | `330 ohm`, stock has 90 | LED current limit for 5 V NPN low-side drivers |
 | 3 | Base-emitter pull-down resistor | `100k`, optional but recommended | Keeps LED drivers off during reset/power-up |
 | 2 | Mode-input pull-down resistor | `10k`, in basket | Defines `MANUAL=0` and `AUTO=0` in the selector's centre position |
 | 1 | Write-button debounce network | `10k` pull-up plus `100nF` to ground | For a normally-closed, open-on-press button; produces one clean auto-mode target/start event. |
-| as needed | DIP sockets | Appropriate 14-, 16-, and 20-pin sockets | Recommended for all new ICs |
-| as needed | Wire-wrap wire / hook-up wire | 30 AWG wire-wrap or insulated solid wire | Expansion-module wiring |
+| as needed | DIP and wire-wrap sockets | 8-, 14-, 16-, 18-, and 24-pin units, per the socket plan | Required for the new-board base, Phase 1 ICs, and local passive strips. |
+| as needed | Wire-wrap wire | AWG28 Jonard: red, black, white, yellow, blue; plus green Belden | New-board power, data, control, and panel-indication wiring. |
 
-## Existing Board Items Used Without Repurposing
+## Base-Machine Functions Retained In The New Board
 
-| Existing item | Use |
+| Base-machine item | Use |
 | --- | --- |
 | `MM2114A` SRAM | Receives the selected address's revised value through the new controlled interface |
 | Four top data switches | Target source, observed at high impedance and captured by the added `74LS173` |
 | Six address switches | Continue to select the state being trained |
 | Read/Write switch | Continues to control manual operation |
-| Existing write button | Mode-gated manual write or automatic target/start action |
+| `WRITE` button | Mode-gated manual write or automatic target/start action |
 | Lower green bezel LED | `INCREASE`: candidate is below target |
 | Lower yellow bezel LED | `DECREASE`: candidate is above target |
 | Upper red bezel LED | `MATCH / HALT`: candidate equals target |
 
-The existing 555, `74LS93` counters, `uPB8226C`, `SN74LS367A`, and
-`DM74LS04N` remain untouched by this addition.
+The base `555`, `74LS93` counters, `uPB8226C`, `SN74LS367A`, and `DM74LS04N`
+remain functionally separate from the Phase 1 addition.
 
 ## Basket Check
 
@@ -89,5 +95,5 @@ the finalized design: `74LS74`, `74LS157`, `74LS173`, `74LS08`, `74LS161`,
 required `74LS85`, `74LS138`, and `74LS00` are covered by existing stock.
 
 The basket does not cover passive components, sockets, wire, or LED-driver
-parts listed above. Verify existing bezel LED resistor arrangements before
+parts listed above. Verify the chosen panel LED resistor arrangements before
 buying or fitting duplicate current-limit resistors.
