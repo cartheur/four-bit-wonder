@@ -27,6 +27,9 @@ Use existing unused panel LEDs where available; otherwise fit one red, one
 yellow, and one green LED. The complete connection and driver guidance is in
 [the comparator-stage document](comparator-version.md).
 
+For the Polysance podcast or educational framing, use the
+[Machine Memory and Game action brief](action-brief/README.md).
+
 ## Exploration Boundary
 
 Do not add target latches, counters, sequencers, autonomous write control, or

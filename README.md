@@ -20,6 +20,18 @@ machine on a Vector `8016-1` Circbord.
 The small comparator build is the exploration step. The autonomous build is
 not an incremental modification of the photographed board.
 
+### Polysance Action Brief
+
+The [Machine Memory and Game action brief](action-brief/README.md) translates
+the small comparator build into a Polysance podcast or educational action. It
+provides the talking points and demonstration sequence for showing a person
+select an address and a value, then observe whether the stored word is lower,
+equal, or higher. Its intention is to communicate legible machine behavior:
+memory, comparison, and manual intervention are visible without overstating
+the board as an autonomous or learning system. The action brief is a
+communication guide; the comparator document remains the technical source for
+parts, wiring, and safety checks.
+
 ## Build Tracks
 
 The photographed Four-Bit Wonder is a handmade, legible two-part experiment: a 555 plus two
