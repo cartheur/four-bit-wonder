@@ -3,6 +3,17 @@
 1. **Gather parts.**  
    Use one `74LS85`, 16-pin socket, 100nF ceramic capacitor, three LEDs (red/yellow/green), three NPN transistors (`2N3904` or `BC547`), three `10k` base resistors, three `100k` base-to-emitter resistors, and three `3.3k` LED resistors.
 
+I imagined the comparator add-on as a **socketed wire-wrap subassembly**, not permanently soldered passives:
+
+- `74LS85`: one 16-pin DIP wire-wrap socket.
+- `100nF` comparator decoupler: fit directly across socket pins `16` and `8`, with very short folded leads. It should not be on a remote passive strip.
+- Three transistors: three 3-pin TO-92 wire-wrap positions, made from small machined-pin socket strips or individual wire-wrap terminals. This lets you replace a transistor and accommodate its actual lead order.
+- Resistors: use the spare paired positions in the two existing 24-pin passive sockets first. They already have four unused opposing pairs. Put the three LED current-limit resistors there.
+- Add one 16-pin wire-wrap passive socket near the comparator for the three `10k` base resistors and the three optional `100k` base-emitter pull-downs. Six of its eight opposing pairs are used.
+- LEDs: retain them in the panel/bezel holders; connect their leads to two nearby wire-wrap terminals or a two-pin machined socket position so the panel can be disconnected for service.
+
+So the physical addition is: one `DIP-16` comparator socket, one `DIP-16` passive strip, three TO-92 socket positions, and the already-present spare positions on the two `DIP-24` passive strips. That keeps every replaceable part socketed while putting the decoupler where it electrically belongs.
+
 2. **Power down the Four-Bit Wonder.**  
    Fit the `74LS85` socket on a small add-on board or a clear area of the existing board. Keep its notch facing upward. Do not insert the IC yet.
 
