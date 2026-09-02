@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1320" viewBox="0 0 1800 1320" role="img" aria-labelledby="title desc">
+<title id="title">Four-Bit Wonder blank-board socket layout</title>
+<desc id="desc">Approximate scaled DIP socket plan for the base machine and Phase 1 and 2 additions.</desc>
+<style>
+  .board { fill: #fbf5dd; stroke: #4d493f; stroke-width: 4; }
+  .zone { stroke: #6f6758; stroke-width: 1.4; stroke-dasharray: 7 5; }
+  .zone-label { font: 700 15px Georgia, serif; letter-spacing: 1.3px; fill: #403b31; }
+  .socket rect { fill: #20211e; stroke: #0d0e0d; stroke-width: 2; }
+  .socket circle { fill: #d9ccb0; }
+  .notch { stroke: #f7f1df; stroke-width: 2.3; fill: none; }
+  .ref { font: 700 12px monospace; fill: #ffffff; text-anchor: middle; }
+  .label { font: 10px monospace; fill: #ddd5c6; text-anchor: middle; }
+  .heading { font: 700 34px Georgia, serif; fill: #25231e; }
+  .subheading { font: 16px Georgia, serif; fill: #514c42; }
+  .legend { font: 13px monospace; fill: #36322b; }
+</style>
+<rect width="1800" height="1320" fill="#f6f1e6"/>
+<text x="70" y="55" class="heading">Four-Bit Wonder: Blank-Board Socket Plan</text>
+<text x="70" y="82" class="subheading">Core build: 28 sockets. Placement plan only; circuit wiring follows in a separate schematic.</text>
+<rect x="65" y="120" width="1670" height="1110" rx="14" class="board"/>
+<g><rect x="95" y="165" width="455" height="350" fill="#f5e5c8" class="zone"/><text x="109" y="189" class="zone-label">BASE TIMING</text></g><g><rect x="610" y="165" width="735" height="455" fill="#dbece5" class="zone"/><text x="624" y="189" class="zone-label">PHASE 1 CLOCK / CONTROL</text></g><g><rect x="1380" y="165" width="300" height="820" fill="#dbe5f4" class="zone"/><text x="1394" y="189" class="zone-label">PHASE 2 ADDRESS</text></g><g><rect x="95" y="530" width="500" height="290" fill="#f1dfd6" class="zone"/><text x="109" y="554" class="zone-label">BASE BUS / SRAM</text></g><g><rect x="650" y="640" width="695" height="240" fill="#f2e8cf" class="zone"/><text x="664" y="664" class="zone-label">PHASE 1 FOUR-BIT DATA PATH</text></g><g><rect x="95" y="900" width="1240" height="305" fill="#e6e1f1" class="zone"/><text x="109" y="924" class="zone-label">PANEL INTERFACE / RESISTOR STRIPS</text></g><g><rect x="1380" y="1000" width="300" height="115" fill="#eeeeee" class="zone"/><text x="1394" y="1024" class="zone-label">PHASE 2B RESERVE</text></g>
+<g class="socket">
+  <rect x="130" y="235" width="82" height="110" rx="5"/>
+  <path d="M 159 235 q 12 15 24 0" class="notch"/>
+  <text x="171.0" y="286" class="ref">B1</text>
+  <text x="171.0" y="303" class="label">555</text>
+  <circle cx="138" cy="263" r="3.4"/><circle cx="204" cy="263" r="3.4"/><circle cx="138" cy="281" r="3.4"/><circle cx="204" cy="281" r="3.4"/><circle cx="138" cy="299" r="3.4"/><circle cx="204" cy="299" r="3.4"/><circle cx="138" cy="317" r="3.4"/><circle cx="204" cy="317" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="245" y="225" width="82" height="164" rx="5"/>
+  <path d="M 274 225 q 12 15 24 0" class="notch"/>
+  <text x="286.0" y="303" class="ref">B2</text>
+  <text x="286.0" y="320" class="label">74LS93</text>
+  <circle cx="253" cy="253" r="3.4"/><circle cx="319" cy="253" r="3.4"/><circle cx="253" cy="271" r="3.4"/><circle cx="319" cy="271" r="3.4"/><circle cx="253" cy="289" r="3.4"/><circle cx="319" cy="289" r="3.4"/><circle cx="253" cy="307" r="3.4"/><circle cx="319" cy="307" r="3.4"/><circle cx="253" cy="325" r="3.4"/><circle cx="319" cy="325" r="3.4"/><circle cx="253" cy="343" r="3.4"/><circle cx="319" cy="343" r="3.4"/><circle cx="253" cy="361" r="3.4"/><circle cx="319" cy="361" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="360" y="225" width="82" height="164" rx="5"/>
+  <path d="M 389 225 q 12 15 24 0" class="notch"/>
+  <text x="401.0" y="303" class="ref">B3</text>
+  <text x="401.0" y="320" class="label">74LS93</text>
+  <circle cx="368" cy="253" r="3.4"/><circle cx="434" cy="253" r="3.4"/><circle cx="368" cy="271" r="3.4"/><circle cx="434" cy="271" r="3.4"/><circle cx="368" cy="289" r="3.4"/><circle cx="434" cy="289" r="3.4"/><circle cx="368" cy="307" r="3.4"/><circle cx="434" cy="307" r="3.4"/><circle cx="368" cy="325" r="3.4"/><circle cx="434" cy="325" r="3.4"/><circle cx="368" cy="343" r="3.4"/><circle cx="434" cy="343" r="3.4"/><circle cx="368" cy="361" r="3.4"/><circle cx="434" cy="361" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="125" y="590" width="82" height="164" rx="5"/>
+  <path d="M 154 590 q 12 15 24 0" class="notch"/>
+  <text x="166.0" y="668" class="ref">B4</text>
+  <text x="166.0" y="685" class="label">74LS04</text>
+  <circle cx="133" cy="618" r="3.4"/><circle cx="199" cy="618" r="3.4"/><circle cx="133" cy="636" r="3.4"/><circle cx="199" cy="636" r="3.4"/><circle cx="133" cy="654" r="3.4"/><circle cx="199" cy="654" r="3.4"/><circle cx="133" cy="672" r="3.4"/><circle cx="199" cy="672" r="3.4"/><circle cx="133" cy="690" r="3.4"/><circle cx="199" cy="690" r="3.4"/><circle cx="133" cy="708" r="3.4"/><circle cx="199" cy="708" r="3.4"/><circle cx="133" cy="726" r="3.4"/><circle cx="199" cy="726" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="245" y="570" width="82" height="182" rx="5"/>
+  <path d="M 274 570 q 12 15 24 0" class="notch"/>
+  <text x="286.0" y="657" class="ref">B5</text>
+  <text x="286.0" y="674" class="label">74LS367</text>
+  <circle cx="253" cy="598" r="3.4"/><circle cx="319" cy="598" r="3.4"/><circle cx="253" cy="616" r="3.4"/><circle cx="319" cy="616" r="3.4"/><circle cx="253" cy="634" r="3.4"/><circle cx="319" cy="634" r="3.4"/><circle cx="253" cy="652" r="3.4"/><circle cx="319" cy="652" r="3.4"/><circle cx="253" cy="670" r="3.4"/><circle cx="319" cy="670" r="3.4"/><circle cx="253" cy="688" r="3.4"/><circle cx="319" cy="688" r="3.4"/><circle cx="253" cy="706" r="3.4"/><circle cx="319" cy="706" r="3.4"/><circle cx="253" cy="724" r="3.4"/><circle cx="319" cy="724" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="375" y="570" width="82" height="182" rx="5"/>
+  <path d="M 404 570 q 12 15 24 0" class="notch"/>
+  <text x="416.0" y="657" class="ref">B6</text>
+  <text x="416.0" y="674" class="label">uPB8226</text>
+  <circle cx="383" cy="598" r="3.4"/><circle cx="449" cy="598" r="3.4"/><circle cx="383" cy="616" r="3.4"/><circle cx="449" cy="616" r="3.4"/><circle cx="383" cy="634" r="3.4"/><circle cx="449" cy="634" r="3.4"/><circle cx="383" cy="652" r="3.4"/><circle cx="449" cy="652" r="3.4"/><circle cx="383" cy="670" r="3.4"/><circle cx="449" cy="670" r="3.4"/><circle cx="383" cy="688" r="3.4"/><circle cx="449" cy="688" r="3.4"/><circle cx="383" cy="706" r="3.4"/><circle cx="449" cy="706" r="3.4"/><circle cx="383" cy="724" r="3.4"/><circle cx="449" cy="724" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="495" y="555" width="82" height="200" rx="5"/>
+  <path d="M 524 555 q 12 15 24 0" class="notch"/>
+  <text x="536.0" y="651" class="ref">B7</text>
+  <text x="536.0" y="668" class="label">MM2114</text>
+  <circle cx="503" cy="583" r="3.4"/><circle cx="569" cy="583" r="3.4"/><circle cx="503" cy="601" r="3.4"/><circle cx="569" cy="601" r="3.4"/><circle cx="503" cy="619" r="3.4"/><circle cx="569" cy="619" r="3.4"/><circle cx="503" cy="637" r="3.4"/><circle cx="569" cy="637" r="3.4"/><circle cx="503" cy="655" r="3.4"/><circle cx="569" cy="655" r="3.4"/><circle cx="503" cy="673" r="3.4"/><circle cx="569" cy="673" r="3.4"/><circle cx="503" cy="691" r="3.4"/><circle cx="569" cy="691" r="3.4"/><circle cx="503" cy="709" r="3.4"/><circle cx="569" cy="709" r="3.4"/><circle cx="503" cy="727" r="3.4"/><circle cx="569" cy="727" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="125" y="940" width="82" height="254" rx="5"/>
+  <path d="M 154 940 q 12 15 24 0" class="notch"/>
+  <text x="166.0" y="1063" class="ref">P0</text>
+  <text x="166.0" y="1080" class="label">panel R/C</text>
+  <circle cx="133" cy="968" r="3.4"/><circle cx="199" cy="968" r="3.4"/><circle cx="133" cy="986" r="3.4"/><circle cx="199" cy="986" r="3.4"/><circle cx="133" cy="1004" r="3.4"/><circle cx="199" cy="1004" r="3.4"/><circle cx="133" cy="1022" r="3.4"/><circle cx="199" cy="1022" r="3.4"/><circle cx="133" cy="1040" r="3.4"/><circle cx="199" cy="1040" r="3.4"/><circle cx="133" cy="1058" r="3.4"/><circle cx="199" cy="1058" r="3.4"/><circle cx="133" cy="1076" r="3.4"/><circle cx="199" cy="1076" r="3.4"/><circle cx="133" cy="1094" r="3.4"/><circle cx="199" cy="1094" r="3.4"/><circle cx="133" cy="1112" r="3.4"/><circle cx="199" cy="1112" r="3.4"/><circle cx="133" cy="1130" r="3.4"/><circle cx="199" cy="1130" r="3.4"/><circle cx="133" cy="1148" r="3.4"/><circle cx="199" cy="1148" r="3.4"/><circle cx="133" cy="1166" r="3.4"/><circle cx="199" cy="1166" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="285" y="940" width="82" height="254" rx="5"/>
+  <path d="M 314 940 q 12 15 24 0" class="notch"/>
+  <text x="326.0" y="1063" class="ref">P1</text>
+  <text x="326.0" y="1080" class="label">panel R/C</text>
+  <circle cx="293" cy="968" r="3.4"/><circle cx="359" cy="968" r="3.4"/><circle cx="293" cy="986" r="3.4"/><circle cx="359" cy="986" r="3.4"/><circle cx="293" cy="1004" r="3.4"/><circle cx="359" cy="1004" r="3.4"/><circle cx="293" cy="1022" r="3.4"/><circle cx="359" cy="1022" r="3.4"/><circle cx="293" cy="1040" r="3.4"/><circle cx="359" cy="1040" r="3.4"/><circle cx="293" cy="1058" r="3.4"/><circle cx="359" cy="1058" r="3.4"/><circle cx="293" cy="1076" r="3.4"/><circle cx="359" cy="1076" r="3.4"/><circle cx="293" cy="1094" r="3.4"/><circle cx="359" cy="1094" r="3.4"/><circle cx="293" cy="1112" r="3.4"/><circle cx="359" cy="1112" r="3.4"/><circle cx="293" cy="1130" r="3.4"/><circle cx="359" cy="1130" r="3.4"/><circle cx="293" cy="1148" r="3.4"/><circle cx="359" cy="1148" r="3.4"/><circle cx="293" cy="1166" r="3.4"/><circle cx="359" cy="1166" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="630" y="230" width="82" height="110" rx="5"/>
+  <path d="M 659 230 q 12 15 24 0" class="notch"/>
+  <text x="671.0" y="281" class="ref">U1</text>
+  <text x="671.0" y="298" class="label">NE555</text>
+  <circle cx="638" cy="258" r="3.4"/><circle cx="704" cy="258" r="3.4"/><circle cx="638" cy="276" r="3.4"/><circle cx="704" cy="276" r="3.4"/><circle cx="638" cy="294" r="3.4"/><circle cx="704" cy="294" r="3.4"/><circle cx="638" cy="312" r="3.4"/><circle cx="704" cy="312" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="730" y="220" width="82" height="182" rx="5"/>
+  <path d="M 759 220 q 12 15 24 0" class="notch"/>
+  <text x="771.0" y="307" class="ref">U2</text>
+  <text x="771.0" y="324" class="label">74LS161</text>
+  <circle cx="738" cy="248" r="3.4"/><circle cx="804" cy="248" r="3.4"/><circle cx="738" cy="266" r="3.4"/><circle cx="804" cy="266" r="3.4"/><circle cx="738" cy="284" r="3.4"/><circle cx="804" cy="284" r="3.4"/><circle cx="738" cy="302" r="3.4"/><circle cx="804" cy="302" r="3.4"/><circle cx="738" cy="320" r="3.4"/><circle cx="804" cy="320" r="3.4"/><circle cx="738" cy="338" r="3.4"/><circle cx="804" cy="338" r="3.4"/><circle cx="738" cy="356" r="3.4"/><circle cx="804" cy="356" r="3.4"/><circle cx="738" cy="374" r="3.4"/><circle cx="804" cy="374" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="850" y="220" width="82" height="182" rx="5"/>
+  <path d="M 879 220 q 12 15 24 0" class="notch"/>
+  <text x="891.0" y="307" class="ref">U3</text>
+  <text x="891.0" y="324" class="label">74LS138</text>
+  <circle cx="858" cy="248" r="3.4"/><circle cx="924" cy="248" r="3.4"/><circle cx="858" cy="266" r="3.4"/><circle cx="924" cy="266" r="3.4"/><circle cx="858" cy="284" r="3.4"/><circle cx="924" cy="284" r="3.4"/><circle cx="858" cy="302" r="3.4"/><circle cx="924" cy="302" r="3.4"/><circle cx="858" cy="320" r="3.4"/><circle cx="924" cy="320" r="3.4"/><circle cx="858" cy="338" r="3.4"/><circle cx="924" cy="338" r="3.4"/><circle cx="858" cy="356" r="3.4"/><circle cx="924" cy="356" r="3.4"/><circle cx="858" cy="374" r="3.4"/><circle cx="924" cy="374" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="630" y="420" width="82" height="164" rx="5"/>
+  <path d="M 659 420 q 12 15 24 0" class="notch"/>
+  <text x="671.0" y="498" class="ref">U4</text>
+  <text x="671.0" y="515" class="label">74LS74</text>
+  <circle cx="638" cy="448" r="3.4"/><circle cx="704" cy="448" r="3.4"/><circle cx="638" cy="466" r="3.4"/><circle cx="704" cy="466" r="3.4"/><circle cx="638" cy="484" r="3.4"/><circle cx="704" cy="484" r="3.4"/><circle cx="638" cy="502" r="3.4"/><circle cx="704" cy="502" r="3.4"/><circle cx="638" cy="520" r="3.4"/><circle cx="704" cy="520" r="3.4"/><circle cx="638" cy="538" r="3.4"/><circle cx="704" cy="538" r="3.4"/><circle cx="638" cy="556" r="3.4"/><circle cx="704" cy="556" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="730" y="420" width="82" height="164" rx="5"/>
+  <path d="M 759 420 q 12 15 24 0" class="notch"/>
+  <text x="771.0" y="498" class="ref">U5</text>
+  <text x="771.0" y="515" class="label">74LS08</text>
+  <circle cx="738" cy="448" r="3.4"/><circle cx="804" cy="448" r="3.4"/><circle cx="738" cy="466" r="3.4"/><circle cx="804" cy="466" r="3.4"/><circle cx="738" cy="484" r="3.4"/><circle cx="804" cy="484" r="3.4"/><circle cx="738" cy="502" r="3.4"/><circle cx="804" cy="502" r="3.4"/><circle cx="738" cy="520" r="3.4"/><circle cx="804" cy="520" r="3.4"/><circle cx="738" cy="538" r="3.4"/><circle cx="804" cy="538" r="3.4"/><circle cx="738" cy="556" r="3.4"/><circle cx="804" cy="556" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="845" y="420" width="82" height="164" rx="5"/>
+  <path d="M 874 420 q 12 15 24 0" class="notch"/>
+  <text x="886.0" y="498" class="ref">U6</text>
+  <text x="886.0" y="515" class="label">74LS00</text>
+  <circle cx="853" cy="448" r="3.4"/><circle cx="919" cy="448" r="3.4"/><circle cx="853" cy="466" r="3.4"/><circle cx="919" cy="466" r="3.4"/><circle cx="853" cy="484" r="3.4"/><circle cx="919" cy="484" r="3.4"/><circle cx="853" cy="502" r="3.4"/><circle cx="919" cy="502" r="3.4"/><circle cx="853" cy="520" r="3.4"/><circle cx="919" cy="520" r="3.4"/><circle cx="853" cy="538" r="3.4"/><circle cx="919" cy="538" r="3.4"/><circle cx="853" cy="556" r="3.4"/><circle cx="919" cy="556" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="960" y="350" width="82" height="254" rx="5"/>
+  <path d="M 989 350 q 12 15 24 0" class="notch"/>
+  <text x="1001.0" y="473" class="ref">P2</text>
+  <text x="1001.0" y="490" class="label">P1 passives</text>
+  <circle cx="968" cy="378" r="3.4"/><circle cx="1034" cy="378" r="3.4"/><circle cx="968" cy="396" r="3.4"/><circle cx="1034" cy="396" r="3.4"/><circle cx="968" cy="414" r="3.4"/><circle cx="1034" cy="414" r="3.4"/><circle cx="968" cy="432" r="3.4"/><circle cx="1034" cy="432" r="3.4"/><circle cx="968" cy="450" r="3.4"/><circle cx="1034" cy="450" r="3.4"/><circle cx="968" cy="468" r="3.4"/><circle cx="1034" cy="468" r="3.4"/><circle cx="968" cy="486" r="3.4"/><circle cx="1034" cy="486" r="3.4"/><circle cx="968" cy="504" r="3.4"/><circle cx="1034" cy="504" r="3.4"/><circle cx="968" cy="522" r="3.4"/><circle cx="1034" cy="522" r="3.4"/><circle cx="968" cy="540" r="3.4"/><circle cx="1034" cy="540" r="3.4"/><circle cx="968" cy="558" r="3.4"/><circle cx="1034" cy="558" r="3.4"/><circle cx="968" cy="576" r="3.4"/><circle cx="1034" cy="576" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="1100" y="350" width="82" height="254" rx="5"/>
+  <path d="M 1129 350 q 12 15 24 0" class="notch"/>
+  <text x="1141.0" y="473" class="ref">P3</text>
+  <text x="1141.0" y="490" class="label">P1 passives</text>
+  <circle cx="1108" cy="378" r="3.4"/><circle cx="1174" cy="378" r="3.4"/><circle cx="1108" cy="396" r="3.4"/><circle cx="1174" cy="396" r="3.4"/><circle cx="1108" cy="414" r="3.4"/><circle cx="1174" cy="414" r="3.4"/><circle cx="1108" cy="432" r="3.4"/><circle cx="1174" cy="432" r="3.4"/><circle cx="1108" cy="450" r="3.4"/><circle cx="1174" cy="450" r="3.4"/><circle cx="1108" cy="468" r="3.4"/><circle cx="1174" cy="468" r="3.4"/><circle cx="1108" cy="486" r="3.4"/><circle cx="1174" cy="486" r="3.4"/><circle cx="1108" cy="504" r="3.4"/><circle cx="1174" cy="504" r="3.4"/><circle cx="1108" cy="522" r="3.4"/><circle cx="1174" cy="522" r="3.4"/><circle cx="1108" cy="540" r="3.4"/><circle cx="1174" cy="540" r="3.4"/><circle cx="1108" cy="558" r="3.4"/><circle cx="1174" cy="558" r="3.4"/><circle cx="1108" cy="576" r="3.4"/><circle cx="1174" cy="576" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="1240" y="350" width="82" height="254" rx="5"/>
+  <path d="M 1269 350 q 12 15 24 0" class="notch"/>
+  <text x="1281.0" y="473" class="ref">P4</text>
+  <text x="1281.0" y="490" class="label">P1 passives</text>
+  <circle cx="1248" cy="378" r="3.4"/><circle cx="1314" cy="378" r="3.4"/><circle cx="1248" cy="396" r="3.4"/><circle cx="1314" cy="396" r="3.4"/><circle cx="1248" cy="414" r="3.4"/><circle cx="1314" cy="414" r="3.4"/><circle cx="1248" cy="432" r="3.4"/><circle cx="1314" cy="432" r="3.4"/><circle cx="1248" cy="450" r="3.4"/><circle cx="1314" cy="450" r="3.4"/><circle cx="1248" cy="468" r="3.4"/><circle cx="1314" cy="468" r="3.4"/><circle cx="1248" cy="486" r="3.4"/><circle cx="1314" cy="486" r="3.4"/><circle cx="1248" cy="504" r="3.4"/><circle cx="1314" cy="504" r="3.4"/><circle cx="1248" cy="522" r="3.4"/><circle cx="1314" cy="522" r="3.4"/><circle cx="1248" cy="540" r="3.4"/><circle cx="1314" cy="540" r="3.4"/><circle cx="1248" cy="558" r="3.4"/><circle cx="1314" cy="558" r="3.4"/><circle cx="1248" cy="576" r="3.4"/><circle cx="1314" cy="576" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="700" y="680" width="82" height="182" rx="5"/>
+  <path d="M 729 680 q 12 15 24 0" class="notch"/>
+  <text x="741.0" y="767" class="ref">U7</text>
+  <text x="741.0" y="784" class="label">74LS173</text>
+  <circle cx="708" cy="708" r="3.4"/><circle cx="774" cy="708" r="3.4"/><circle cx="708" cy="726" r="3.4"/><circle cx="774" cy="726" r="3.4"/><circle cx="708" cy="744" r="3.4"/><circle cx="774" cy="744" r="3.4"/><circle cx="708" cy="762" r="3.4"/><circle cx="774" cy="762" r="3.4"/><circle cx="708" cy="780" r="3.4"/><circle cx="774" cy="780" r="3.4"/><circle cx="708" cy="798" r="3.4"/><circle cx="774" cy="798" r="3.4"/><circle cx="708" cy="816" r="3.4"/><circle cx="774" cy="816" r="3.4"/><circle cx="708" cy="834" r="3.4"/><circle cx="774" cy="834" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="825" y="680" width="82" height="182" rx="5"/>
+  <path d="M 854 680 q 12 15 24 0" class="notch"/>
+  <text x="866.0" y="767" class="ref">U8</text>
+  <text x="866.0" y="784" class="label">74LS85</text>
+  <circle cx="833" cy="708" r="3.4"/><circle cx="899" cy="708" r="3.4"/><circle cx="833" cy="726" r="3.4"/><circle cx="899" cy="726" r="3.4"/><circle cx="833" cy="744" r="3.4"/><circle cx="899" cy="744" r="3.4"/><circle cx="833" cy="762" r="3.4"/><circle cx="899" cy="762" r="3.4"/><circle cx="833" cy="780" r="3.4"/><circle cx="899" cy="780" r="3.4"/><circle cx="833" cy="798" r="3.4"/><circle cx="899" cy="798" r="3.4"/><circle cx="833" cy="816" r="3.4"/><circle cx="899" cy="816" r="3.4"/><circle cx="833" cy="834" r="3.4"/><circle cx="899" cy="834" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="950" y="680" width="82" height="182" rx="5"/>
+  <path d="M 979 680 q 12 15 24 0" class="notch"/>
+  <text x="991.0" y="767" class="ref">U9</text>
+  <text x="991.0" y="784" class="label">74LS193</text>
+  <circle cx="958" cy="708" r="3.4"/><circle cx="1024" cy="708" r="3.4"/><circle cx="958" cy="726" r="3.4"/><circle cx="1024" cy="726" r="3.4"/><circle cx="958" cy="744" r="3.4"/><circle cx="1024" cy="744" r="3.4"/><circle cx="958" cy="762" r="3.4"/><circle cx="1024" cy="762" r="3.4"/><circle cx="958" cy="780" r="3.4"/><circle cx="1024" cy="780" r="3.4"/><circle cx="958" cy="798" r="3.4"/><circle cx="1024" cy="798" r="3.4"/><circle cx="958" cy="816" r="3.4"/><circle cx="1024" cy="816" r="3.4"/><circle cx="958" cy="834" r="3.4"/><circle cx="1024" cy="834" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="1075" y="690" width="82" height="164" rx="5"/>
+  <path d="M 1104 690 q 12 15 24 0" class="notch"/>
+  <text x="1116.0" y="768" class="ref">U10</text>
+  <text x="1116.0" y="785" class="label">74LS125</text>
+  <circle cx="1083" cy="718" r="3.4"/><circle cx="1149" cy="718" r="3.4"/><circle cx="1083" cy="736" r="3.4"/><circle cx="1149" cy="736" r="3.4"/><circle cx="1083" cy="754" r="3.4"/><circle cx="1149" cy="754" r="3.4"/><circle cx="1083" cy="772" r="3.4"/><circle cx="1149" cy="772" r="3.4"/><circle cx="1083" cy="790" r="3.4"/><circle cx="1149" cy="790" r="3.4"/><circle cx="1083" cy="808" r="3.4"/><circle cx="1149" cy="808" r="3.4"/><circle cx="1083" cy="826" r="3.4"/><circle cx="1149" cy="826" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="1190" y="680" width="82" height="182" rx="5"/>
+  <path d="M 1219 680 q 12 15 24 0" class="notch"/>
+  <text x="1231.0" y="767" class="ref">U11</text>
+  <text x="1231.0" y="784" class="label">74LS157</text>
+  <circle cx="1198" cy="708" r="3.4"/><circle cx="1264" cy="708" r="3.4"/><circle cx="1198" cy="726" r="3.4"/><circle cx="1264" cy="726" r="3.4"/><circle cx="1198" cy="744" r="3.4"/><circle cx="1264" cy="744" r="3.4"/><circle cx="1198" cy="762" r="3.4"/><circle cx="1264" cy="762" r="3.4"/><circle cx="1198" cy="780" r="3.4"/><circle cx="1264" cy="780" r="3.4"/><circle cx="1198" cy="798" r="3.4"/><circle cx="1264" cy="798" r="3.4"/><circle cx="1198" cy="816" r="3.4"/><circle cx="1264" cy="816" r="3.4"/><circle cx="1198" cy="834" r="3.4"/><circle cx="1264" cy="834" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="1430" y="205" width="82" height="182" rx="5"/>
+  <path d="M 1459 205 q 12 15 24 0" class="notch"/>
+  <text x="1471.0" y="292" class="ref">V1</text>
+  <text x="1471.0" y="309" class="label">74LS393</text>
+  <circle cx="1438" cy="233" r="3.4"/><circle cx="1504" cy="233" r="3.4"/><circle cx="1438" cy="251" r="3.4"/><circle cx="1504" cy="251" r="3.4"/><circle cx="1438" cy="269" r="3.4"/><circle cx="1504" cy="269" r="3.4"/><circle cx="1438" cy="287" r="3.4"/><circle cx="1504" cy="287" r="3.4"/><circle cx="1438" cy="305" r="3.4"/><circle cx="1504" cy="305" r="3.4"/><circle cx="1438" cy="323" r="3.4"/><circle cx="1504" cy="323" r="3.4"/><circle cx="1438" cy="341" r="3.4"/><circle cx="1504" cy="341" r="3.4"/><circle cx="1438" cy="359" r="3.4"/><circle cx="1504" cy="359" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="1550" y="220" width="82" height="164" rx="5"/>
+  <path d="M 1579 220 q 12 15 24 0" class="notch"/>
+  <text x="1591.0" y="298" class="ref">V2</text>
+  <text x="1591.0" y="315" class="label">74LS14</text>
+  <circle cx="1558" cy="248" r="3.4"/><circle cx="1624" cy="248" r="3.4"/><circle cx="1558" cy="266" r="3.4"/><circle cx="1624" cy="266" r="3.4"/><circle cx="1558" cy="284" r="3.4"/><circle cx="1624" cy="284" r="3.4"/><circle cx="1558" cy="302" r="3.4"/><circle cx="1624" cy="302" r="3.4"/><circle cx="1558" cy="320" r="3.4"/><circle cx="1624" cy="320" r="3.4"/><circle cx="1558" cy="338" r="3.4"/><circle cx="1624" cy="338" r="3.4"/><circle cx="1558" cy="356" r="3.4"/><circle cx="1624" cy="356" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="1430" y="470" width="82" height="182" rx="5"/>
+  <path d="M 1459 470 q 12 15 24 0" class="notch"/>
+  <text x="1471.0" y="557" class="ref">V3</text>
+  <text x="1471.0" y="574" class="label">74LS157</text>
+  <circle cx="1438" cy="498" r="3.4"/><circle cx="1504" cy="498" r="3.4"/><circle cx="1438" cy="516" r="3.4"/><circle cx="1504" cy="516" r="3.4"/><circle cx="1438" cy="534" r="3.4"/><circle cx="1504" cy="534" r="3.4"/><circle cx="1438" cy="552" r="3.4"/><circle cx="1504" cy="552" r="3.4"/><circle cx="1438" cy="570" r="3.4"/><circle cx="1504" cy="570" r="3.4"/><circle cx="1438" cy="588" r="3.4"/><circle cx="1504" cy="588" r="3.4"/><circle cx="1438" cy="606" r="3.4"/><circle cx="1504" cy="606" r="3.4"/><circle cx="1438" cy="624" r="3.4"/><circle cx="1504" cy="624" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="1550" y="470" width="82" height="182" rx="5"/>
+  <path d="M 1579 470 q 12 15 24 0" class="notch"/>
+  <text x="1591.0" y="557" class="ref">V4</text>
+  <text x="1591.0" y="574" class="label">74LS157</text>
+  <circle cx="1558" cy="498" r="3.4"/><circle cx="1624" cy="498" r="3.4"/><circle cx="1558" cy="516" r="3.4"/><circle cx="1624" cy="516" r="3.4"/><circle cx="1558" cy="534" r="3.4"/><circle cx="1624" cy="534" r="3.4"/><circle cx="1558" cy="552" r="3.4"/><circle cx="1624" cy="552" r="3.4"/><circle cx="1558" cy="570" r="3.4"/><circle cx="1624" cy="570" r="3.4"/><circle cx="1558" cy="588" r="3.4"/><circle cx="1624" cy="588" r="3.4"/><circle cx="1558" cy="606" r="3.4"/><circle cx="1624" cy="606" r="3.4"/><circle cx="1558" cy="624" r="3.4"/><circle cx="1624" cy="624" r="3.4"/>
+</g>
+<g class="socket">
+  <rect x="1435" y="715" width="82" height="254" rx="5"/>
+  <path d="M 1464 715 q 12 15 24 0" class="notch"/>
+  <text x="1476.0" y="838" class="ref">P5</text>
+  <text x="1476.0" y="855" class="label">P2 passives</text>
+  <circle cx="1443" cy="743" r="3.4"/><circle cx="1509" cy="743" r="3.4"/><circle cx="1443" cy="761" r="3.4"/><circle cx="1509" cy="761" r="3.4"/><circle cx="1443" cy="779" r="3.4"/><circle cx="1509" cy="779" r="3.4"/><circle cx="1443" cy="797" r="3.4"/><circle cx="1509" cy="797" r="3.4"/><circle cx="1443" cy="815" r="3.4"/><circle cx="1509" cy="815" r="3.4"/><circle cx="1443" cy="833" r="3.4"/><circle cx="1509" cy="833" r="3.4"/><circle cx="1443" cy="851" r="3.4"/><circle cx="1509" cy="851" r="3.4"/><circle cx="1443" cy="869" r="3.4"/><circle cx="1509" cy="869" r="3.4"/><circle cx="1443" cy="887" r="3.4"/><circle cx="1509" cy="887" r="3.4"/><circle cx="1443" cy="905" r="3.4"/><circle cx="1509" cy="905" r="3.4"/><circle cx="1443" cy="923" r="3.4"/><circle cx="1509" cy="923" r="3.4"/><circle cx="1443" cy="941" r="3.4"/><circle cx="1509" cy="941" r="3.4"/>
+</g>
+<g transform="translate(80 1260)"><rect width="1640" height="32" rx="5" fill="#e7dfca"/>
+<text x="14" y="21" class="legend">Footprints scale by DIP pin pairs. Keep 100nF decouplers at IC sockets; use P0-P5 for resistor, timing, bulk, and control passives.</text></g>
+</svg>
