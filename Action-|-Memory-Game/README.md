@@ -24,3 +24,22 @@
 7. Leave the existing write path, timing, and address controls unchanged. Do not add latches, counters, automatic write control, or address scanning in this version.
 
 This gives a small, reversible game-like memory exploration on the original board and validates the comparator/indicator behavior that the separate autonomous build later expands upon.
+
+**Machine Memory and Game Version Parts**
+
+| Qty | Part | Notes |
+| ---: | --- | --- |
+| 1 | `SN74LS85N` | Four-bit comparator; listed as in stock. |
+| 1 | 16-pin DIP wire-wrap socket | For the `74LS85`. |
+| 1 | `100nF` ceramic capacitor | Directly across comparator power pins. |
+| 3 | NPN transistor | `2N3904`, `BC547`, or equivalent low-side LED drivers. |
+| 3 | `10k` resistor | Transistor base resistors. |
+| 3 | `3.3k` resistor | Initial LED current-limit values. Do not start with `330 ohm` here. |
+| 3 | `100k` resistor | Recommended base-emitter pull-downs. |
+| 1 each | Red, yellow, green LED | Only if suitable unused panel LEDs are not already present. |
+| 1 | 24-pin DIP wire-wrap passive strip | Recommended: the existing two strips have only four spare paired positions, while this stage needs at least six resistor positions. |
+| As needed | AWG28 wire-wrap wire | Blue for the eight comparator data inputs, green for LED-drive nets, red/black only for power and ground. |
+
+Also have a multimeter or logic probe available to verify the SRAM read bus before connecting the comparator.
+
+No new memory IC, clock, counter, switch, or new board is needed for this version.
