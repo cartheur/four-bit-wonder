@@ -1,1 +1,2 @@
-scripts/__pycache__/generate_circuital_layout_diagrams.cpython-313.pyc
+*.pyc
+*.FCBak
