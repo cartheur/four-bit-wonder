@@ -218,7 +218,7 @@ Place the parts by the signals they share, not by phase. Keep the panel-facing
 parts along the lower edge, the SRAM interface together in the centre, and the
 clock/control logic away from the data bus.
 
-![Approximate blank-board socket layout](images/socket-layout.svg)
+![Four-Bit Wonder Machine Autonomous Version socket layout](images/socket-layout.svg)
 
 Regenerate this visual with `python3 scripts/generate_circuital_layout_diagrams.py`.
 It is a component-placement plan only; electrical connections and final pin

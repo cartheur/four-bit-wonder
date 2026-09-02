@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the Four-Bit Wonder blank-board socket and wire-wrap plan as SVG."""
+"""Render the Four-Bit Wonder Machine Autonomous Version socket plan as SVG."""
 
 from __future__ import annotations
 
@@ -191,8 +191,8 @@ def render() -> str:
 <text x="{reserve_x + 14}" y="{reserve_y + 43}" class="control-reserve-note">optional control logic</text>
 {p1_ghosts}</g>'''
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1320" viewBox="0 0 1800 1320" role="img" aria-labelledby="title desc">
-<title id="title">Four-Bit Wonder blank-board socket layout</title>
-<desc id="desc">Approximate scaled DIP socket plan for the base machine and Phase 1 and 2 additions.</desc>
+<title id="title">Four-Bit Wonder Machine Autonomous Version socket layout</title>
+<desc id="desc">Approximate scaled DIP socket plan for the independent Four-Bit Wonder new-board base machine and Phase 1 and 2 additions.</desc>
 <style>
   .board {{ fill: #fbf5dd; stroke: #4d493f; stroke-width: 4; }}
   .grid {{ stroke: #a89d81; stroke-width: .45; opacity: .20; }}
@@ -233,8 +233,8 @@ def render() -> str:
   .transistor text {{ font: 700 10px monospace; fill: #ffffff; text-anchor: middle; }}
 </style>
 <rect width="1800" height="1320" fill="#f6f1e6"/>
-<text x="70" y="55" class="heading">Four-Bit Wonder: Blank-Board Socket Plan</text>
-<text x="70" y="82" class="subheading">Core build: 28 sockets. Conceptual 0.1-inch grid; confirm final board dimensions before fabrication.</text>
+<text x="70" y="55" class="heading">Four-Bit Wonder: Machine Autonomous Version</text>
+<text x="70" y="82" class="subheading">Independent new-board core: 28 sockets. Conceptual 0.1-inch grid; confirm final board dimensions before fabrication.</text>
 <rect x="65" y="120" width="1670" height="1110" rx="14" class="board"/>
 {svg_grid()}
 <g aria-label="power rail locations">
