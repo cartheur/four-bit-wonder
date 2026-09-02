@@ -44,6 +44,32 @@ of the comparator to the bidirectional SRAM bus.
 The cascade inputs make this a standalone four-bit comparison. Add a `100 nF`
 ceramic capacitor directly between the `74LS85` supply pins.
 
+### Wire-Wrap Connection List
+
+With the `74LS85` notch facing up, make these connections. Trace the original
+board first and connect to the named signal points, not to an assumed physical
+location.
+
+| `74LS85` pin | Connect to | Wire role |
+| ---: | --- | --- |
+| 16 `VCC` | `+5V` | Red power wire; connect one end of the `100nF` capacitor here. |
+| 8 `GND` | Ground | Black ground wire; connect the other end of the `100nF` capacitor here. |
+| 10 `A0` | `M0`, SRAM read-data bit 0 | Blue data wire. |
+| 12 `A1` | `M1`, SRAM read-data bit 1 | Blue data wire. |
+| 13 `A2` | `M2`, SRAM read-data bit 2 | Blue data wire. |
+| 15 `A3` | `M3`, SRAM read-data bit 3 | Blue data wire. |
+| 9 `B0` | `S0`, data-switch bit 0 | Blue data wire. |
+| 11 `B1` | `S1`, data-switch bit 1 | Blue data wire. |
+| 14 `B2` | `S2`, data-switch bit 2 | Blue data wire. |
+| 1 `B3` | `S3`, data-switch bit 3 | Blue data wire. |
+| 2 cascade `A<B` input | Ground | Black ground wire. |
+| 3 cascade `A=B` input | `+5V` | Red power wire. |
+| 4 cascade `A>B` input | Ground | Black ground wire. |
+
+Take `S0`-`S3` from the switch side of the existing series resistors and
+`M0`-`M3` from the SRAM/buffer side. This preserves the separation between the
+manual data-entry controls and the bidirectional SRAM bus.
+
 The useful output meanings are:
 
 | Comparator output | Meaning | Suggested panel LED |
@@ -51,6 +77,21 @@ The useful output meanings are:
 | `A < B` | Stored word is lower than switch word | Green: `LOW / INCREASE` |
 | `A = B` | Stored word matches switch word | Red: `MATCH` |
 | `A > B` | Stored word is higher than switch word | Yellow: `HIGH / DECREASE` |
+
+Wire each output through a separate transistor driver:
+
+| Comparator output | `74LS85` pin | Driver and LED connection |
+| --- | ---: | --- |
+| `A < B` | 7 | Through `10k` to the green-driver base. |
+| `A = B` | 6 | Through `10k` to the red-driver base. |
+| `A > B` | 5 | Through `10k` to the yellow-driver base. |
+
+For each NPN driver, connect its emitter to ground and a `100k` resistor from
+base to emitter. Connect the LED anode through its `3.3k` current-limit
+resistor to `+5V`, then connect its cathode to that transistor's collector.
+Use green AWG28 wire for the three comparator-output-to-driver runs. Verify the
+actual `2N3904` or `BC547` lead order from its datasheet before wiring it;
+their package pinouts are not interchangeable.
 
 ## LED Drivers
 
