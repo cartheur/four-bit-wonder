@@ -37,3 +37,7 @@ simple memory relation can become observable and playable.
 The circuit design, parts list, and wire-wrap instructions remain in
 [the comparator-stage document](../comparator-version.md). Consult the local
 [`SN74LS85` datasheet](../datasheets/74ls85.pdf) before fitting the IC.
+
+The optional [RAM7400 nibble target action brief](NIBBLER.md)
+describes the separate four-latch follow-on project. It is not required for
+this comparator-only modification.

@@ -28,7 +28,7 @@ yellow, and one green LED. The complete connection and driver guidance is in
 [the comparator-stage document](comparator-version.md).
 
 For the Polysance podcast or educational framing, use the
-[Machine Memory and Game action brief](action-brief/README.md).
+[Machine Memory and Game action brief](action-brief/GAME.md).
 
 ## Exploration Boundary
 

@@ -22,7 +22,7 @@ not an incremental modification of the photographed board.
 
 ### Polysance Action Brief
 
-The [Machine Memory and Game action brief](action-brief/README.md) translates
+The [Machine Memory and Game action brief](action-brief/GAME.md) translates
 the small comparator build into a Polysance podcast or educational action. It
 provides the talking points and demonstration sequence for showing a person
 select an address and a value, then observe whether the stored word is lower,
