@@ -1,8 +1,10 @@
 # Bill of Materials
 
-This is the current bill for the autonomous addition described in
-`four-bit-wonder-autonomous-addition.md`. It preserves the existing timing
-divider, bus chips, switch functions in manual mode, and panel hole count.
+This is the Phase 1 bill for the [Machine Autonomous Version](machine-autonomous-version.md),
+a progressive build on a new board. Together with the base machine and Phase 2,
+it does not modify or repurpose the photographed Four-Bit Wonder. The
+incremental design in `four-bit-wonder-autonomous-addition.md` is retained as a
+separate legacy track.
 
 ## Logic ICs
 
@@ -37,10 +39,17 @@ One purchased switch remains as a spare.
 No new switch or pushbutton is needed. The existing write button is mode-gated:
 it writes manually in `MANUAL` and performs `LOAD TARGET / START` in `AUTO`.
 
+For the replacement board, use the same normally-closed, open-on-press
+connection as `NEXT ADDRESS`: the button input is grounded while released, and
+a `10k` pull-up makes it high when pressed. Debounce it with `100nF` to ground
+and use the `74LS14` to produce an active-low press event. The existing write
+button is the same stocked part and has this confirmed contact polarity.
+
 ## Still Needed Outside the Basket
 
 | Qty | Part | Suggested value or specification | Purpose |
 | ---: | --- | --- | --- |
+| 1 | Vector `8016-1` Circbord | `155 x 155 mm` | Selected replacement-board substrate for the base machine and Phase 1/2 wiring. |
 | 1 | NE555 timing resistor `RA` | `10k` | Autonomous-clock timing network |
 | 1 | NE555 timing resistor `RB` | `4.7k` in series with an in-stock `100k` linear trimmer | Adjustable autonomous-clock timing network |
 | 1 | Alternative fixed `RB` resistor | `68k`, in basket | Produces approximately one phase per second with a `10uF` timing capacitor |
@@ -52,7 +61,7 @@ it writes manually in `MANUAL` and performs `LOAD TARGET / START` in `AUTO`.
 | 3 | LED resistor | `330 ohm`, stock has 90 | LED current limit for 5 V NPN low-side drivers |
 | 3 | Base-emitter pull-down resistor | `100k`, optional but recommended | Keeps LED drivers off during reset/power-up |
 | 2 | Mode-input pull-down resistor | `10k`, in basket | Defines `MANUAL=0` and `AUTO=0` in the selector's centre position |
-| 1 | Write-button debounce network | `10k` plus `100nF`, verify capacitor from passive stock | Produces one clean auto-mode target/start event |
+| 1 | Write-button debounce network | `10k` pull-up plus `100nF` to ground | For a normally-closed, open-on-press button; produces one clean auto-mode target/start event. |
 | as needed | DIP sockets | Appropriate 14-, 16-, and 20-pin sockets | Recommended for all new ICs |
 | as needed | Wire-wrap wire / hook-up wire | 30 AWG wire-wrap or insulated solid wire | Expansion-module wiring |
 
@@ -69,7 +78,7 @@ it writes manually in `MANUAL` and performs `LOAD TARGET / START` in `AUTO`.
 | Lower yellow bezel LED | `DECREASE`: candidate is above target |
 | Upper red bezel LED | `MATCH / HALT`: candidate equals target |
 
-The existing 555, `74LS93` counters, `uPD8226C`, `SN74LS367A`, and
+The existing 555, `74LS93` counters, `uPB8226C`, `SN74LS367A`, and
 `DM74LS04N` remain untouched by this addition.
 
 ## Basket Check

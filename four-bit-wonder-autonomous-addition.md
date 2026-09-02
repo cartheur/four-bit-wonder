@@ -1,5 +1,10 @@
 # The Four-Bit Wonder Autonomous Addition
 
+> **Legacy incremental track.** This document describes an addition to the
+> photographed original Four-Bit Wonder. The current Base + Phase 1 + Phase 2
+> plan is instead the independent [Machine Autonomous Version](machine-autonomous-version.md)
+> built on a new Vector `8016-1` board.
+
 ## Purpose
 
 This addition gives the Four-Bit Wonder a small, visible form of goal-seeking
@@ -23,7 +28,7 @@ panel.
 The original board remains itself.
 
 - The upper-left 555 and two `74LS93` timing-divider section is not reused.
-- The existing `uPD8226C`, `SN74LS367A`, `DM74LS04N`, and SRAM support wiring
+- The existing `uPB8226C`, `SN74LS367A`, `DM74LS04N`, and SRAM support wiring
   are not repurposed.
 - The six address switches remain the operator's address selector.
 - The four top data switches remain normal manual data-entry controls.
@@ -149,7 +154,7 @@ DISABLED:    `/CS` high; every added bus driver high impedance
 
 Use the purchased `74LS125` as the added counter-to-SRAM tri-state driver. Its
 outputs connect to the SRAM data bus only during the `WRITE` phase of `AUTO`
-mode. This avoids relying on, or changing, the existing `uPD8226C` role.
+mode. This avoids relying on, or changing, the existing `uPB8226C` role.
 
 The interface must make bus contention impossible:
 

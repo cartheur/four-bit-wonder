@@ -1,11 +1,11 @@
-# Comparator Version: Four-Bit Memory Match Game
+# Machine Memory and Game Version: Comparator Stage
 
 ## Purpose
 
-This is the smallest extension to the Four-Bit Wonder. It uses a `74LS85`
-4-bit magnitude comparator and three existing unused panel LEDs to compare a
-value manually selected on the four top data switches with the value currently
-read from the `MM2114A` SRAM.
+This is the smallest intended extension to the photographed Four-Bit Wonder.
+It uses one `74LS85` 4-bit magnitude comparator and three red, yellow, and
+green panel indicators to compare a value manually selected on the four top
+data switches with the value currently read from the `MM2114A` SRAM.
 
 It is a read-and-match game, not an autonomous learner. The four data switches
 remain both the normal data-entry controls and the comparison target.
@@ -48,9 +48,9 @@ The useful output meanings are:
 
 | Comparator output | Meaning | Suggested panel LED |
 | --- | --- | --- |
-| `A < B` | Stored word is lower than switch word | Lower unused LED: `LOW` |
-| `A = B` | Stored word matches switch word | Top unused LED: `MATCH` |
-| `A > B` | Stored word is higher than switch word | Other lower unused LED: `HIGH` |
+| `A < B` | Stored word is lower than switch word | Green: `LOW / INCREASE` |
+| `A = B` | Stored word matches switch word | Red: `MATCH` |
+| `A > B` | Stored word is higher than switch word | Yellow: `HIGH / DECREASE` |
 
 ## LED Drivers
 
@@ -93,5 +93,7 @@ manual write mechanism.
 
 The data switches cannot simultaneously be a fixed target and a new value to
 write. Moving them to enter a revised word also moves the comparison target.
-The autonomous design in `autonomous-version.md` solves that by latching the
-target word before it begins modifying SRAM.
+The separate [Machine Autonomous Version](machine-autonomous-version.md) solves
+that by latching the target word before it begins modifying SRAM. This small
+comparator stage is therefore an exploration path, not a partially built
+autonomous controller.

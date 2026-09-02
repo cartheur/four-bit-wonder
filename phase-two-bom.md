@@ -61,15 +61,22 @@ until that behaviour has been chosen.
 | 1 | Bulk capacitor | `10uF` to `47uF`, at least 10 V; verify from passive stock | Supports the expanded 5 V TTL rail. |
 | 1 | Pull-up resistor | `4.7k` to `10k`; inventory has both values | Holds the automatic-counter reset inactive. |
 | 1 | Reset capacitor | `100nF` to `1uF`, selected with the pull-up | Optional power-on reset for the address counter. |
-| 1 | Advance pushbutton | Momentary, normally open | Optional manual `NEXT ADDRESS` control for test and demonstration. |
-| 1 | Debounce resistor | `10k`; inventory has 100 | Used with the `74LS14` for the optional advance pushbutton. |
-| 1 | Debounce capacitor | `100nF` | Used with the `74LS14` for the optional advance pushbutton. |
+| 1 | Advance pushbutton | Momentary, normally closed; open on press | Optional manual `NEXT ADDRESS` control for test and demonstration. |
+| 1 | Debounce resistor | `10k` pull-up; inventory has 100 | Pulls the button input high when the normally-closed contact opens. |
+| 1 | Debounce capacitor | `100nF` from the button input to ground | Debounces the open-on-press transition before the `74LS14`. |
 | as needed | DIP sockets | 14-pin for `74LS14`; 16-pin for `74LS393` and `74LS157`; inventory has 30 and 36 respectively | Recommended for the added ICs. |
 | as needed | Wire-wrap wire / hook-up wire | 30 AWG wire-wrap or insulated solid wire; inventory includes 28 AWG Kynar | Address-path and control wiring. |
 
 Add one further `100nF` capacitor if the optional `74LS123` is fitted. The
 Phase 2B target-memory bank requires eight more capacitors: one for each of
 its eight added ICs.
+
+Wire the normally-closed `NEXT ADDRESS` contact from the button input to
+ground. At rest the input is low; pressing releases it and the `10k` pull-up
+makes it high. The first `74LS14` inverter therefore produces an active-low
+`/ADVANCE` transition on the press edge. The later circuit diagram must use
+that falling edge directly or invert it again before any positive-edge counter
+clock; do not clock the counter from the unqualified release edge.
 
 ## Address-Path Summary
 
