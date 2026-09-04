@@ -1,5 +1,7 @@
 ## Comparator Stage Build Guide
 
+![Comparator wiring pictogram](../images/comparator-wiring.svg)
+
 1. **Gather parts.**  
    Use one `74LS85`, 18-pin socket, 100nF ceramic capacitor, three LEDs (red/yellow/green), three stocked `2N2222A` TO-92 transistors, three `10k` base resistors, three `100k` base-to-emitter resistors, and three `3.3k` LED resistors. With the flat face toward you and leads down, each stocked transistor is `emitter - base - collector`.
 

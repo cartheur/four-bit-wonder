@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">Four-Bit Wonder 74LS85 comparator wiring</title>
+  <desc id="desc">Physical pin-position wiring diagram for a 74LS85 in an 18-pin wire-wrap socket, with RAM and switch inputs plus three 2N2222A LED drivers.</desc>
+  <style>
+    .bg{fill:#f6f0e2}.box{fill:#fffdf8;stroke:#26343b;stroke-width:3}.socket{fill:#ebe2ce;stroke:#26343b;stroke-width:3}.ic{fill:#d9e8ee;stroke:#26343b;stroke-width:3}.pin{fill:#fffdf8;stroke:#26343b;stroke-width:2}.note{fill:#fae8a9;stroke:#806b30;stroke-width:2}.title{fill:#17252d;font:bold 34px sans-serif}.sub{fill:#41535c;font:18px sans-serif}.label{fill:#17252d;font:19px monospace}.small{fill:#17252d;font:15px monospace}.data{fill:none;stroke:#1976b8;stroke-width:4}.power{fill:none;stroke:#c54338;stroke-width:4}.ground{fill:none;stroke:#26343b;stroke-width:4}.output{fill:none;stroke:#34864d;stroke-width:4}.green{fill:none;stroke:#2e9c58;stroke-width:4}.red{fill:none;stroke:#ca4646;stroke-width:4}.yellow{fill:none;stroke:#c9951c;stroke-width:4}.dash{fill:none;stroke:#796442;stroke-width:3;stroke-dasharray:7 6}
+  </style>
+  <rect class="bg" width="1600" height="1120"/>
+  <text class="title" x="55" y="58">Comparator Add-On: Physical Pin Wiring</text>
+  <text class="sub" x="55" y="88">Socket and IC notches face up. Blue: data. Red: +5V. Black: GND. Green: comparator outputs.</text>
+
+  <rect class="box" x="55" y="155" width="310" height="285" rx="14"/>
+  <text class="label" x="80" y="190">MM2114A / BUFFER</text><text class="small" x="80" y="216">Read-data side only</text>
+  <rect class="ic" x="115" y="245" width="125" height="140" rx="8"/><text class="label" x="145" y="280">2114</text>
+  <text class="small" x="138" y="310">M0</text><text class="small" x="138" y="335">M1</text><text class="small" x="138" y="360">M2</text><text class="small" x="138" y="385">M3</text>
+  <path class="data" d="M240 305H430V490H885"/><path class="data" d="M240 330H415V410H885"/><path class="data" d="M240 355H400V370H885"/><path class="data" d="M240 380H385V290H885"/>
+  <text class="small" x="305" y="285">M0-M3 to A inputs</text>
+
+  <rect class="box" x="55" y="590" width="310" height="270" rx="14"/>
+  <text class="label" x="80" y="625">DATA SWITCHES</text><text class="small" x="80" y="651">Switch side only</text>
+  <text class="label" x="100" y="705">S0</text><text class="label" x="100" y="750">S1</text><text class="label" x="100" y="795">S2</text><text class="label" x="100" y="840">S3</text>
+  <path class="data" d="M145 698H465V530H885"/><path class="data" d="M145 743H455V450H885"/><path class="data" d="M145 788H445V330H885"/><path class="data" d="M145 833H435V250H575"/>
+  <text class="small" x="125" y="887">Keep S0-S3 separate from M0-M3.</text>
+
+  <!-- The source-to-pin map avoids unreadable crossings while retaining exact pins. -->
+  <rect class="bg" x="35" y="125" width="555" height="785"/>
+  <rect class="box" x="55" y="155" width="430" height="720" rx="14"/>
+  <text class="label" x="82" y="195">SOURCE-TO-PIN MAP</text>
+  <text class="small" x="82" y="230">Read/buffer side of MM2114A:</text>
+  <text class="label" x="105" y="275">M0  -&gt; pin 10  A0</text>
+  <text class="label" x="105" y="315">M1  -&gt; pin 12  A1</text>
+  <text class="label" x="105" y="355">M2  -&gt; pin 13  A2</text>
+  <text class="label" x="105" y="395">M3  -&gt; pin 15  A3</text>
+  <text class="small" x="82" y="450">Switch side of data resistors:</text>
+  <text class="label" x="105" y="495">S0  -&gt; pin  9  B0</text>
+  <text class="label" x="105" y="535">S1  -&gt; pin 11  B1</text>
+  <text class="label" x="105" y="575">S2  -&gt; pin 14  B2</text>
+  <text class="label" x="105" y="615">S3  -&gt; pin  1  B3</text>
+  <path class="ground" d="M90 665H125"/><text class="label" x="145" y="671">GND -&gt; pins 2, 4, 8</text>
+  <path class="power" d="M90 710H125"/><text class="label" x="145" y="716">+5V -&gt; pins 3, 16</text>
+  <text class="small" x="82" y="745">Never connect an S net directly to an M net.</text>
+  <text class="small" x="82" y="790">Output-to-driver map:</text>
+  <text class="label" x="105" y="822">pin 7 A&lt;B -&gt; green 10k / base</text>
+  <text class="label" x="105" y="852">pin 6 A=B -&gt; red 10k / base</text>
+
+  <rect class="socket" x="540" y="135" width="390" height="700" rx="18"/>
+  <text class="label" x="635" y="172">DIP-18 WW SOCKET</text><path d="M710 188q25 30 50 0" fill="none" stroke="#26343b" stroke-width="4"/>
+  <rect class="ic" x="685" y="208" width="100" height="410" rx="10"/><text class="label" x="696" y="235">74LS85</text>
+
+  <circle class="pin" cx="575" cy="250" r="12"/><text class="small" x="592" y="256">1  B3 / S3</text>
+  <circle class="pin" cx="575" cy="290" r="12"/><text class="small" x="592" y="296">2  I&lt; / GND</text>
+  <circle class="pin" cx="575" cy="330" r="12"/><text class="small" x="592" y="336">3  I= / +5V</text>
+  <circle class="pin" cx="575" cy="370" r="12"/><text class="small" x="592" y="376">4  I&gt; / GND</text>
+  <circle class="pin" cx="575" cy="410" r="12"/><text class="small" x="592" y="416">5  OUT A&gt;B</text>
+  <circle class="pin" cx="575" cy="450" r="12"/><text class="small" x="592" y="456">6  OUT A=B</text>
+  <circle class="pin" cx="575" cy="490" r="12"/><text class="small" x="592" y="496">7  OUT A&lt;B</text>
+  <circle class="pin" cx="575" cy="530" r="12"/><text class="small" x="592" y="536">8  GND</text>
+
+  <circle class="pin" cx="885" cy="250" r="12"/><text class="small" x="870" y="256" text-anchor="end">16 +5V</text>
+  <circle class="pin" cx="885" cy="290" r="12"/><text class="small" x="870" y="296" text-anchor="end">15 A3 / M3</text>
+  <circle class="pin" cx="885" cy="330" r="12"/><text class="small" x="870" y="336" text-anchor="end">14 B2 / S2</text>
+  <circle class="pin" cx="885" cy="370" r="12"/><text class="small" x="870" y="376" text-anchor="end">13 A2 / M2</text>
+  <circle class="pin" cx="885" cy="410" r="12"/><text class="small" x="870" y="416" text-anchor="end">12 A1 / M1</text>
+  <circle class="pin" cx="885" cy="450" r="12"/><text class="small" x="870" y="456" text-anchor="end">11 B1 / S1</text>
+  <circle class="pin" cx="885" cy="490" r="12"/><text class="small" x="870" y="496" text-anchor="end">10 A0 / M0</text>
+  <circle class="pin" cx="885" cy="530" r="12"/><text class="small" x="870" y="536" text-anchor="end">9 B0 / S0</text>
+
+  <circle class="pin" cx="575" cy="575" r="12"/><circle class="pin" cx="885" cy="575" r="12"/><text class="small" x="590" y="580">socket 9 spare</text><text class="small" x="870" y="580" text-anchor="end">socket 10 spare</text>
+  <path class="ground" d="M575 575V650H535V530H563"/><path class="power" d="M885 575V680H920V250H897"/>
+  <rect class="note" x="550" y="700" width="370" height="105" rx="12"/><text class="small" x="575" y="735">Fit 100nF in spare socket pair 9-10.</text><text class="small" x="575" y="760">Wrap socket 9 to 8 (GND).</text><text class="small" x="575" y="785">Wrap socket 10 to 18 (+5V).</text>
+
+  <rect class="note" x="550" y="850" width="370" height="82" rx="12"/>
+  <text class="small" x="575" y="877">pin 5 A&gt;B -&gt; yellow 10k / base</text>
+  <text class="small" x="575" y="901">Outputs leave the socket's left side.</text>
+  <text class="small" x="575" y="922">Route them below the socket.</text>
+
+  <rect class="box" x="1030" y="145" width="510" height="690" rx="14"/><text class="label" x="1060" y="180">LED DRIVER LANES</text><text class="small" x="1060" y="205">2N2222A flat face forward: E - B - C</text>
+  <text class="label" x="1060" y="360">A&lt;B: GREEN / LOW</text><rect class="box" x="1050" y="225" width="62" height="30"/><text class="small" x="1060" y="246">10k</text><path class="green" d="M1112 240H1160"/><rect class="ic" x="1160" y="216" width="82" height="48" rx="7"/><text class="small" x="1170" y="245">2N2222A</text><path class="dash" d="M1140 240V285H1175"/><text class="small" x="1060" y="290">100k B-E</text><path class="ground" d="M1175 264V300"/><text class="small" x="1150" y="322">E to GND</text><path class="green" d="M1242 240H1290"/><text class="small" x="1255" y="228">C</text><circle cx="1320" cy="240" r="15" fill="#2e9c58" stroke="#26343b" stroke-width="2"/><rect class="box" x="1360" y="225" width="48" height="30"/><text class="small" x="1367" y="246">3k3</text><path class="green" d="M1335 240H1360M1408 240H1460"/><text class="small" x="1430" y="228">+5V</text>
+  <text class="label" x="1060" y="560">A=B: RED / MATCH</text><rect class="box" x="1050" y="425" width="62" height="30"/><text class="small" x="1060" y="446">10k</text><path class="red" d="M1112 440H1160"/><rect class="ic" x="1160" y="416" width="82" height="48" rx="7"/><text class="small" x="1170" y="445">2N2222A</text><path class="dash" d="M1140 440V485H1175"/><text class="small" x="1060" y="490">100k B-E</text><path class="ground" d="M1175 464V500"/><text class="small" x="1150" y="522">E to GND</text><path class="red" d="M1242 440H1290"/><text class="small" x="1255" y="428">C</text><circle cx="1320" cy="440" r="15" fill="#ca4646" stroke="#26343b" stroke-width="2"/><rect class="box" x="1360" y="425" width="48" height="30"/><text class="small" x="1367" y="446">3k3</text><path class="red" d="M1335 440H1360M1408 440H1460"/><text class="small" x="1430" y="428">+5V</text>
+  <text class="label" x="1060" y="760">A&gt;B: YELLOW / HIGH</text><rect class="box" x="1050" y="625" width="62" height="30"/><text class="small" x="1060" y="646">10k</text><path class="yellow" d="M1112 640H1160"/><rect class="ic" x="1160" y="616" width="82" height="48" rx="7"/><text class="small" x="1170" y="645">2N2222A</text><path class="dash" d="M1140 640V685H1175"/><text class="small" x="1060" y="690">100k B-E</text><path class="ground" d="M1175 664V700"/><text class="small" x="1150" y="722">E to GND</text><path class="yellow" d="M1242 640H1290"/><text class="small" x="1255" y="628">C</text><circle cx="1320" cy="640" r="15" fill="#d7a521" stroke="#26343b" stroke-width="2"/><rect class="box" x="1360" y="625" width="48" height="30"/><text class="small" x="1367" y="646">3k3</text><path class="yellow" d="M1335 640H1360M1408 640H1460"/><text class="small" x="1430" y="628">+5V</text>
+  <rect class="note" x="1030" y="900" width="510" height="110" rx="12"/><text class="small" x="1060" y="930">Before power: meter-check +5V to GND.</text><text class="small" x="1060" y="958">There must be no short circuit.</text><text class="small" x="1060" y="986">Outputs are valid only during selected SRAM READ.</text>
+</svg>
