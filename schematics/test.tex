@@ -1,0 +1,81 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage[american]{circuitikz}
+
+\begin{document}
+\begin{circuitikz}[
+  every node/.style={font=\footnotesize\sffamily},
+  net/.style={line width=.55pt},
+  block/.style={draw, minimum width=2.8cm, minimum height=1.35cm, align=center},
+  pinlabel/.style={font=\scriptsize\sffamily}
+]
+  % Board-level block layout: notches face upward.
+  \draw[thin] (0,0) rectangle (18,12);
+  \node[anchor=west, font=\small\sffamily\bfseries] at (.35,11.65)
+    {Four-Bit Wonder Comparator Add-On};
+
+  % Existing signal sources, shown as the panel/buffer connectors.
+  \draw (0.7,7.3) rectangle (2.2,10.7);
+  \node[anchor=south, pinlabel] at (1.45,10.7) {J1 RAM / BUFFER};
+  \foreach \y/\lab in {10.1/M3,9.4/M2,8.7/M1,8.0/M0} {
+    \draw (2.2,\y) -- (2.7,\y);
+    \node[anchor=east, pinlabel] at (2.05,\y) {\lab};
+  }
+
+  \draw (0.7,2.7) rectangle (2.2,6.4);
+  \node[anchor=south, pinlabel] at (1.45,6.4) {J2 DATA SWITCHES};
+  \foreach \y/\lab in {5.8/S3,5.1/S2,4.4/S1,3.7/S0} {
+    \draw (2.2,\y) -- (2.7,\y);
+    \node[anchor=east, pinlabel] at (2.05,\y) {\lab};
+  }
+
+  % U1 is a 16-pin IC installed in an 18-pin wire-wrap socket.
+  \draw[rounded corners=3pt] (6.4,2.1) rectangle (11.6,10.9);
+  \node[anchor=south] at (9,10.9) {DIP-18 wire-wrap socket};
+  \draw[fill=black!3] (7.2,3.1) rectangle (10.8,10.2);
+  \draw (8.7,10.2) arc[start angle=180,end angle=360,radius=.3];
+  \node[font=\small\sffamily\bfseries] at (9,9.75) {U1 74LS85};
+  \node[font=\scriptsize\sffamily] at (9,9.38) {4-bit magnitude comparator};
+
+  % Physical pin positions: left side is 1 through 8, right is 16 through 9.
+  \foreach \y/\pin/\name in {
+    8.9/1/{B3 / S3},8.3/2/{I(A<B) / GND},7.7/3/{I(A=B) / +5V},7.1/4/{I(A>B) / GND},
+    6.5/5/{A>B},5.9/6/{A=B},5.3/7/{A<B},4.7/8/{GND}
+  } {
+    \draw (6.6,\y) -- (7.2,\y);
+    \node[anchor=east, pinlabel] at (6.5,\y) {\pin\ \name};
+  }
+  \foreach \y/\pin/\name in {
+    8.9/16/{+5V},8.3/15/{A3 / M3},7.7/14/{B2 / S2},7.1/13/{A2 / M2},
+    6.5/12/{A1 / M1},5.9/11/{B1 / S1},5.3/10/{A0 / M0},4.7/9/{B0 / S0}
+  } {
+    \draw (10.8,\y) -- (11.4,\y);
+    \node[anchor=west, pinlabel] at (11.5,\y) {\pin\ \name};
+  }
+
+  % The spare bottom pair of the 18-pin socket becomes C1's mounting point.
+  \draw (6.6,3.7) -- (7.2,3.7);
+  \draw (10.8,3.7) -- (11.4,3.7);
+  \node[anchor=east, pinlabel] at (6.5,3.7) {socket 9};
+  \node[anchor=west, pinlabel] at (11.5,3.7) {socket 10};
+  \draw (7.2,3.7) to[C,l_=C1\ 100\,nF] (10.8,3.7);
+  \draw (7.2,3.7) |- (7.2,4.7);
+  \draw (10.8,3.7) |- (10.8,8.9);
+
+  % Physical outputs leave left-side pins 7, 6, and 5, then take lower tracks.
+  \draw[net] (6.6,5.3) -- (5.8,5.3) |- (12.1,1.25) |- (13.0,9.5);
+  \draw[net] (6.6,5.9) -- (5.5,5.9) |- (12.35,.9) |- (13.0,6.0);
+  \draw[net] (6.6,6.5) -- (5.2,6.5) |- (12.6,.55) |- (13.0,2.5);
+
+  % Three identical low-side driver blocks.  Their internals are listed explicitly.
+  \node[block] (low) at (14.6,9.5) {D1 LOW\\U1 pin 7 A<B\\10k base\\2N2222A + 100k B-E\\green LED + 3k3 to +5V};
+  \node[block] (match) at (14.6,6.0) {D2 MATCH\\U1 pin 6 A=B\\10k base\\2N2222A + 100k B-E\\red LED + 3k3 to +5V};
+  \node[block] (high) at (14.6,2.5) {D3 HIGH\\U1 pin 5 A>B\\10k base\\2N2222A + 100k B-E\\yellow LED + 3k3 to +5V};
+  \draw (13.0,9.5) -- (low.west);
+  \draw (13.0,6.0) -- (match.west);
+  \draw (13.0,2.5) -- (high.west);
+
+  \node[align=left, pinlabel] at (14.6,.65)
+    {2N2222A TO-92: flat face forward, E--B--C.\\
+     Comparator results are meaningful only during selected SRAM READ.};
+\end{circuitikz}
+\end{document}
