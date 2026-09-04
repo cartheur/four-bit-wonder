@@ -1,0 +1,161 @@
+June 2025
+Ideal game ttl
+
+13.06.2025
+    2234: Feeling gamed by the distraction of henry at the expense of dot-aeon-ttl, will shed the fiction of dotnet and return to what is real. But since unsure where to go, will start with this "Guess the number" game with the parts I have imagined. Just now finished the set of prints for the user-interface and will mount on another card, not altering what I have already created for dot.
+15.06.2025
+    1121: Pushing to prepare the models for printing. Will think on a "set of shared features" for ente evolving array of logic boards.
+    1135: Trying an experiment to print the feature-set that belongs to the project, rather than each individually. Also generate collective stl file.
+    1443: Two failed prints due to breaking-away. Maybe the 30% fill. Will print the two chunkers at default 15%.
+    1722: Funk-dat, 4-bit switcher is wrongly-sized. Another print needed. Can still drill but not glue-set.
+    1731: Created a two-set print of correct model.
+17.06.2025
+    1218: Created a project, starting-in on the UI. Need to figure a way to indicate the postion with only two LEDs.
+    1230: Starting with the UI and already seeing the lameness of the AI.
+    1313: Working-through the Address and Data switch-lamp, seeing buses are on the menu today.
+    1413: Appended the figures to remove the second-set of components since this model is 6-bit addressing and 4-bit data.
+    1418: Doping colours to ease the strain. 30,220,228 matches well.
+    1533: At the 2114 diagram, still a question about the busses but need them, yes?
+    1656: Generated Task03 and this is the end of this phase.
+18.06.2025
+    1044: Discussed RAM7400 as a way to get into memories; before that, Heiserman principle of the UI first.
+    1344: Drifting toward soldering.
+    1938: Soldered connections completed. COMM and 5V rails in-place. Leveraged the Vector pins with a bit of round-filing; sets well but dropped a spot of Uhoo to ensure seating over the term of the board's use.
+19.06.2025
+    816: Pins are set and ready to continue with the next steps.
+    1148: Some minor corrections to the task diagrams and gathering the sockets. Since here, will also gather for RAM7400 since this area can be used for self-programming.
+    1312: Sorted RAM7400 but needed an 8-bit port setup for the Arduino tester, which is a great interface to add larger code scenarios.
+    1518: Full set of details completed for RAM7400. Ready to prototype the self-programming memory area.
+    1526: Small adjustments made for clarity in documentation.
+    1532: Setting-up the arduino interface.
+    1640: User-interface and Arduino board ready for test on Windoze.
+    1641: Sockets collected for the ideal-ttl implementation.
+20.06.2025
+    828: A day to continue with sockets and chips for RAM7400 dry-run.
+    1038: Would be wise while at the socketing phase to understand the 2114 circuit that, as far as I know, is still not designed.
+    1106: Sockets gathered. Need to add LEDs - short one but could cut a free socket for an unneeded switch.
+21.06.2025
+    1151: Happy Solstice! Reviewing TTL and ideal pullup values and have computed power ideal with a 4.7k resistor, using the DIP or inline types and not the silly single resistors in the Heiserman way - although in isolated form in a 16-pin DIP, this is approximately the same!
+    1259: Gathered the part for the ideal aspect and listed the UI parts. Would like to begin assembly with the RAM7400 as soon as I can find a 2024 order of 2.2k bussed Bornes block resistors. Later.
+    1618: Still have not found the bussers; settled on working on the UI and sized the third lamp for the success indication in the 74LS85 game.
+    1811: Bussed located and set the full socket requirements for the system.
+    1932: With a common ground the resistor network (bussed) is used; with a common positive the Heiserman method or isolated network is used. I suspect the following: 1. Bussed can be used on 74ls93 counter indicator, 2. Isolated on switch-LED indicator combo, 3. Bussed on pullups.
+    1957: Pull parts then done for the day.
+    2032: Cleaned-up the text in preparation of the build.
+22.06.2025
+    959: Cleared an area for digital analysis but decided against a heavy solution at the moment. Next step is to build the UI. Then, I think, the RAM7400 board to get the sense of how the logic appears.
+    1003: Regarding the UI: Looking at the diagram and reading about the idea of pullup resistors, PR207 and PR208 are performing this task.
+    1009: Will remove the sockets and only keep ones for the UI: 7404, 74367, 8226.
+    1015: Looking at the resistor blocks (10) first as one end is connected to the 5V supply.
+    1048: UI diodes: Red --> 604R; Blue --> 2.43k.
+    1200: Parts are lain-out. Using the deep-cushion to mount the resistors into the 24-pin WW: SwitchRs to the left; LedRs to the right. Addresses first. Data second.
+    1258: Resistors mounted, including the three RL lamps for the 7485. LEDs chosen.
+    1306: Looking at the connections as the LEDs for the 7485 and the 7493 have their anodes to the respective output pins, cathode on ground.
+    1401: For completeness, documented the circuit and its BoM, sans Heiserman parts.
+    1403: Feeling a bit frazzled so shifting away.
+    1437: Fully shifted.
+23.06.2025
+    2014: Still shifted. I notice that if I work through the weekend, Mondays are free.
+    2021: I have contemplated the 7485 and can square the output behaviour. The only gap is from the 8226 to 2114.
+    2057: Just closed the gap and updated the document.
+    2110: Added the datasheet for this part.
+24.06.2025
+    1003: On the EVB today.
+    1005: This should be a companion to aeon-ttl, as this is the prequel, the bear the product target, compact fraemwork the development environment and the output concentrated on animals-dot.
+    1159: Note that this work is across three repos: This one, aeon-ttl, and animals-dot.
+    1200: Finished the correction to EVB so have some free time after lunch to work on this.
+    1410: Not so much free time.
+    1429: 5V line to all the switch resistors, starting.
+    1505: Finished the task.
+    1607: Stepping into the EVB meeting.
+    1846: Stepping out of the EVB meeting. Level shifters too smart for their own good.
+25.06.2025
+    1235: Snapping/soldering pins and WW the equivalent of U13.
+    1310: Job is finished.
+    1325: Thinking of the order for ideal-ttl, since the iron is here: AS0/DS0 is the extreme right (LSB).
+        * Interwires between 7404 and 74367, (yellow)
+        * Addr - 5V (red) and COMM (black) - internal only
+        * AS resistor block to 74367, (AS0 to the inside)
+        * AL resistor block to 7404, (AL0 to the inside)
+        * AL to resistor block, (solder-task)
+        * AS to 7404, (solder-task)
+        * Data - 5V (red) and COMM (black)
+        * DS resistor block to 8226, (DS0 to the inside)
+        * DL resistor block to 8226, (DL0 to the inside)
+        * DL to resistor block, (solder-task)
+        * DS to 8226, (solder-task)
+    1340: Starting-in.
+    1436: All address internal WW has been completed.
+    1605: Going into a meeting.
+    2055: Meeting finished.
+26.06.2025
+    1109: Today is a day to celebrate survival. Having attended to comics, will attend to the completion of the UI.
+    1142: For AS and AL, connections from each respective part to the circuit will complete.
+    1150: AL0 wire mounted and ready for solder. Lunch break.
+    1232: Back. Soldering iron is ready: Begin.
+    1254: AL to resistor block is done.
+    1319: AS to 7404 is done.
+    1320: Hot today. Short break. Remember to proof in another session, just before live test.
+    1424: Completed the list of tasks and DS and DL the final part.
+    1511; Complete. Had to replace DS2 because of cheap connectors to plastic rather than metal. Need to keep at the Mountain - or at the minimum find a viable vista.
+    1514: Looking at the data diagram and the board: What remains open are RESET, R/P, and LOAD.
+    1550: Tried measuring the speaker and got a (very) rough metric. Closed the UI story as this is done.
+03.08.2025
+    1105: Due to machinations, this project is active.
+    1310: To get warmed-up, will resume RAM7400.
+05.08.2025
+    1138: RAM7400 fully assembled and ready for testing. Do not want to start the validation step until construction is completed here.
+    1407: Purvey things done for today.
+    1434: Well, not really. Done now!
+    1509: Still not really. But think so now.
+    1702: Not really at all. Oxygen removed from the process.
+06.08.2025
+    1030: Resuming where I left-off.
+    1104: Work begins.
+    1246: Found an error on the 8226 chip.
+    1304: Next is to delve into Task 3.
+    1308: 74LS93 and 74LS85 will need to be sorted subsequent to 2114. But no LEDs to show readout! Reuse is the obvious answer, the blue datalights. Needs planning after sorting the last task- e.g., need to devise new sets of tasks
+    1722: Will only work until the insertion of 2114 and work-backward to the necessary switch indicators for RAM direction - read-write.
+07.08.2025
+    1044: Focused to get task three completed today.
+    1152: Again on the distraction. Now gathering the parts for task three.
+    1202: Note to return to rodney image 0701 for test description.
+    1204: First part of the task is to connect A0-A5 and D0-D3; second is to address R/P and LOAD.
+    1230: Missing power line to address chips set; power and ground to 2114-18 complete.
+    1311: Address and data bus connected to the 2114 socket.
+08.08.2025
+    1109: Next task is to sort the two switches and pushbutton...and as well to enjoy today's spirit.
+    1150: Grabbed some more datasheets as the item has reappeared in the Jameco webshop.
+    1225: Need to reveal some blocked parts on task02b to get the sense of how Active-Low CS and WE (2114), DIEN and CS (8216/8226) are being used. Also, do I want inverting (8226) or non-inverting (8216), given the I/O circuitry where this chip contributes is non-existant.
+    1228: Well, all I will findout is that they go somewhere else. Basically: Signals are high unless pulled low, which enables these functions. Perhaps a good idea is to start testing what is onboard to get a feel of how it behaves.
+    1232: Well, again, table 5.4 shows where the LOAD button is integrated, which it is currently not.
+    1250: ICs need to be inserted, then testing can commence. Can do a continuity check, if concerned.
+    1710: tested power from external board, rather than power supply works well for the existing waveform circuit. Plenty. Will continue with this passive method.
+09.08.2025
+    1104: Want to amend the task03 diagram to match the ports at-hand.
+    1117: Updated the task03 image to include logic indications and not Heiserman namings.
+    1119: Aded the active low circuit clarity pavel image to the repo.
+10.08.2025
+    1815: Despite pavels and the appearance of 1978 manifestations, want to complete the CS, WE, and LOAD connections so next session can plug-n-chug.
+    1842: Had to attend to something, now starting in.
+    1848: The active-low circuits have 1k pullups, as the lowest available value in documentation. Can changs since in the Heiserman fashion. Continuing.
+    1923: The system is installed! :-)
+11.08.2025
+    1429: Fucking chumps wasting my time today. Fucking hell!
+    1436: Start with a (dry) test of the lamps and switches.
+    1440: LEDs functional but cannot check switches without ICs socketed. Time is here!
+    1452: Chips installed.
+    1455: Address lamps engaged but data not. Will look into wiring and logic analysis. Afterlife sunshine guiding me on this last preparative step.
+    1538: With the HP logic clip and Elenco logic probe, seeing results and things stored in RAM. :-)
+12.08.2025
+    934: Another item to attend to as a priority. Current test setup is very helpful to understanding next steps.
+    950: Before that: Writing and reading RAM is working but something funny in AS4 and AS6 - they seem to be partially connected together; also some crosstalk in some addresses. However, the basic concept is functional, although inverted!
+    951: Nevertheless, the platform initial tests are a rousing success!
+    1030: There is an issue with A5-A3; A0-A2 when looking at the 2114 work correctly, but the next set are working incorrectly. A chip-configuration problem and not the circuit. Will need to get a deeper understanding of addressing in RAM. :-) ...in this case, of course!
+    1038: It also could be that CS needs a separate activity level and not tied together.
+    1053: Anything stated is speculation. Need to attend to the other matter.
+    1305: Found a solid source to set a new foundation of study and the pathway to validate it.
+    1444: Fucking fascists are all about taking everything for themselves.
+    1454: The finality of it all and the approach of wisdom in exclusion to any external deference.
+13.08.2025
+    1013: Paused until immediate work done. On haden.
