@@ -1,2 +1,6 @@
 *.pyc
 *.FCBak
+*.aux
+*.fls
+*.log
+*.fdb_latexmk
