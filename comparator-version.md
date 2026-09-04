@@ -90,8 +90,9 @@ For each NPN driver, connect its emitter to ground and a `100k` resistor from
 base to emitter. Connect the LED anode through its `3.3k` current-limit
 resistor to `+5V`, then connect its cathode to that transistor's collector.
 Use green AWG28 wire for the three comparator-output-to-driver runs. Verify the
-actual `2N3904` or `BC547` lead order from its datasheet before wiring it;
-their package pinouts are not interchangeable.
+stocked `2N2222A` lead order before wiring it. Its Diotec TO-92 package is
+`emitter - base - collector` when viewed with the flat face toward you and the
+leads pointing down.
 
 ## LED Drivers
 
@@ -99,7 +100,7 @@ Do not rely on an LS-TTL output to source panel LED current directly. For each
 of the three outputs, use an NPN low-side driver:
 
 ```text
-74LS85 output -- 10k -- base of 2N3904 (or BC547)
+74LS85 output -- 10k -- base of 2N2222A
                          emitter -- GND
 
 +5V -- LED resistor -- LED anode

@@ -62,7 +62,7 @@ is the same stocked part and has this confirmed contact polarity.
 | 1 | Timing capacitor | `10uF`, verify from passive stock | NE555 astable timing network |
 | 1 | `100nF` capacitor per added IC | Ceramic, X7R or C0G | Local decoupling; 11 for the ten TTL ICs plus NE555 |
 | 1 | Bulk capacitor | `10uF` or greater, at least 10 V | Added-module 5 V rail support |
-| 3 | NPN transistor | `2N3904`, `BC547`, or similar | Low-side drivers for the new-board panel LEDs, if they are not already driven |
+| 3 | NPN transistor | Stocked `2N2222A` in TO-92 | Low-side drivers for the new-board panel LEDs, if they are not already driven. Pins are `E-B-C` with the flat face toward you and leads down. |
 | 3 | Base resistor | `10k` | NPN base current limit |
 | 3 | LED resistor | `330 ohm`, stock has 90 | LED current limit for 5 V NPN low-side drivers |
 | 3 | Base-emitter pull-down resistor | `100k`, optional but recommended | Keeps LED drivers off during reset/power-up |

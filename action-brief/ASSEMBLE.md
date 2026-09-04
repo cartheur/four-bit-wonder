@@ -1,7 +1,7 @@
 ## Comparator Stage Build Guide
 
 1. **Gather parts.**  
-   Use one `74LS85`, 16-pin socket, 100nF ceramic capacitor, three LEDs (red/yellow/green), three NPN transistors (`2N3904` or `BC547`), three `10k` base resistors, three `100k` base-to-emitter resistors, and three `3.3k` LED resistors.
+   Use one `74LS85`, 16-pin socket, 100nF ceramic capacitor, three LEDs (red/yellow/green), three stocked `2N2222A` TO-92 transistors, three `10k` base resistors, three `100k` base-to-emitter resistors, and three `3.3k` LED resistors. With the flat face toward you and leads down, each stocked transistor is `emitter - base - collector`.
 
 I imagined the comparator add-on as a **socketed wire-wrap subassembly**, not permanently soldered passives:
 
