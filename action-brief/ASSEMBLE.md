@@ -48,6 +48,8 @@ So the physical addition is: one `DIP-18` comparator socket with its local decou
    Keep the A inputs on the SRAM/buffer side and B inputs on the switch side. Never join both comparator sides to the SRAM bus.
 
 8. **Build the three LED driver stages.**  
+   **Stocked Diotec `2N2222A` TO-92 pin order:** with the flat face toward you and the leads pointing down, the pins are **left to right: emitter, base, collector (E–B–C)**. This orientation applies to the stocked part; verify the manufacturer's datasheet for any replacement transistor.
+
    For each NPN transistor: emitter to ground; optional `100k` from base to emitter; LED cathode to collector; LED anode through `550 ohm` to `+5V`. The `550 ohm` value was selected by brightness testing with the chosen LEDs to match the other board indicators. Verify the transistor lead order from its datasheet.
 
 9. **Connect comparator outputs to the drivers.**  
