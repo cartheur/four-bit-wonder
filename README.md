@@ -45,11 +45,11 @@ software.
 | --- | --- | --- |
 | Existing Four-Bit Wonder | The original photographed board; retained as a reference machine | Manual SRAM experiment and incremental-addition history. |
 | [Machine Memory and Game Version](machine-memory-and-game-version.md) | Small incremental extension to the original board | One `74LS85` and red/yellow/green comparison indicators create a manual memory match game. |
-| [Machine Autonomous Version](machine-autonomous-version.md) | Independent progressive build on a new Vector `8016-1` board | Base + Phase 1 + Phase 2 autonomous machine. |
+| [Machine Autonomous Version](a-reassigned/machine-autonomous-version.md) | Independent progressive build on a new Vector `8016-1` board | Base + Phase 1 + Phase 2 autonomous machine. |
 
 The [Machine Memory and Game Version](machine-memory-and-game-version.md)
 is the intended small improvement to the original board. The legacy
-[incremental autonomous addition](four-bit-wonder-autonomous-addition.md)
+[incremental autonomous addition](a-reassinged/four-bit-wonder-autonomous-addition.md)
 remains documented as a more extensive alternative, but it is not the
 implementation plan for the new-board Machine Autonomous Version.
 
