@@ -1,6 +1,6 @@
 ## A Four-Bit Wonder
 
-Repo for technical details on the four-bit wonder machine intelligence system.
+Repo for technical details on the four-bit wonder predicate system.
 
 _Background_
 
