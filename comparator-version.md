@@ -87,7 +87,7 @@ Wire each output through a separate transistor driver:
 | `A > B` | 5 | Through `10k` to the yellow-driver base. |
 
 For each NPN driver, connect its emitter to ground and a `100k` resistor from
-base to emitter. Connect the LED anode through its `3.3k` current-limit
+base to emitter. Connect the LED anode through its `550 ohm` current-limit
 resistor to `+5V`, then connect its cathode to that transistor's collector.
 Use green AWG28 wire for the three comparator-output-to-driver runs. Verify the
 stocked `2N2222A` lead order before wiring it. Its Diotec TO-92 package is
@@ -107,7 +107,9 @@ of the three outputs, use an NPN low-side driver:
 LED cathode ----------- collector
 ```
 
-Start with `3.3k` LED resistors for ordinary indicator LEDs. A `100k`
+Use one `550 ohm` current-limiting resistor per LED. This value was selected
+by brightness testing with the chosen LEDs to match the other board indicators.
+A `100k`
 base-to-emitter resistor is optional but keeps the transistor definitely off
 when the logic is unpowered. The existing LEDs may already have current
 limiting resistors; verify this before adding another resistor.

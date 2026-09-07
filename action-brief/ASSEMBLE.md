@@ -3,7 +3,7 @@
 ![Comparator wiring pictogram](../images/comparator-wiring.svg)
 
 1. **Gather parts.**  
-   Use one `74LS85`, 18-pin socket, 100nF ceramic capacitor, three LEDs (red/yellow/green), three stocked `2N2222A` TO-92 transistors, three `10k` base resistors, three `100k` base-to-emitter resistors, and three `3.3k` LED resistors. With the flat face toward you and leads down, each stocked transistor is `emitter - base - collector`.
+   Use one `74LS85`, 18-pin socket, 100nF ceramic capacitor, three LEDs (red/yellow/green), three stocked `2N2222A` TO-92 transistors, three `10k` base resistors, three optional `100k` base-to-emitter resistors, and three `550 ohm` LED resistors. With the flat face toward you and leads down, each stocked transistor is `emitter - base - collector`.
 
 I imagined the comparator add-on as a **socketed wire-wrap subassembly**, not permanently soldered passives:
 
@@ -11,7 +11,7 @@ I imagined the comparator add-on as a **socketed wire-wrap subassembly**, not pe
 - `100nF` comparator decoupler: fit its leads into the unused opposing socket contacts `9` and `10`. On the wire-wrap side, connect contact `9` to contact `8` (`GND`) and contact `10` to contact `18` (`+5V`, carrying `74LS85` pin `16`). The spare contacts are isolated, so both short wrap links are required.
 - Three `2N2222A`: three 3-pin TO-92 wire-wrap positions, made from small machined-pin socket strips or individual wire-wrap terminals. This lets you replace a transistor and accommodate its actual lead order.
 - Add one 16-pin wire-wrap passive socket near the comparator for the three `10k` base resistors and the three optional `100k` base-emitter pull-downs. Six of its eight opposing pairs are used.
-- Add one 8-pin wire-wrap passive socket for the three `3.3k` LED current-limit resistors. The fourth opposing pair remains available as a spare.
+- Add one 8-pin wire-wrap passive socket for the three `550 ohm` LED current-limit resistors. The fourth opposing pair remains available as a spare.
 - LEDs: retain them in the panel/bezel holders; connect their leads to two nearby wire-wrap terminals or a two-pin machined socket position so the panel can be disconnected for service.
 
 So the physical addition is: one `DIP-18` comparator socket with its local decoupler, one `DIP-16` passive strip, one `DIP-8` passive strip, and three TO-92 socket positions. Leave both existing `DIP-24` passive strips allocated to the base machine. That keeps every replaceable part socketed while keeping the decoupler at the comparator socket.
@@ -48,7 +48,7 @@ So the physical addition is: one `DIP-18` comparator socket with its local decou
    Keep the A inputs on the SRAM/buffer side and B inputs on the switch side. Never join both comparator sides to the SRAM bus.
 
 8. **Build the three LED driver stages.**  
-   For each NPN transistor: emitter to ground; `100k` from base to emitter; LED cathode to collector; LED anode through `3.3k` to `+5V`. Verify the transistor lead order from its datasheet.
+   For each NPN transistor: emitter to ground; optional `100k` from base to emitter; LED cathode to collector; LED anode through `550 ohm` to `+5V`. The `550 ohm` value was selected by brightness testing with the chosen LEDs to match the other board indicators. Verify the transistor lead order from its datasheet.
 
 9. **Connect comparator outputs to the drivers.**  
    Use green wire through a separate `10k` resistor to each transistor base:
