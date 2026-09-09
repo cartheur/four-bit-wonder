@@ -30,12 +30,18 @@ outputs leave room for later bus expansion.
 
 | Qty needed | Part | Status | Basket quantity | Role |
 | ---: | --- | --- | ---: | --- |
+| 11 | Mountain Switch [`10TC405`](../datasheets/10TC405.pdf) | **123 in stock; obsolete.** Secured in the final available purchase from Mountain Switch. | N/A | SPST `ON-OFF` panel toggles: six address bits, four data bits, and the manual Read/Write control. |
+| 1 | E-Switch [`PS1024`, circuit A](../datasheets/PS1024.pdf) | In stock | N/A | `WRITE` pushbutton: SPST `OFF-(ON)` (normally open, closes while pressed). |
 | 1 | E-Switch `100SP1T1B1M3QEH` | In basket | 2 | New-board `MANUAL / DISABLED / AUTO` mode selector. |
 | 1 set | Black 3D-printed switch/bezel holders ([design pack](designs/README.md)) | Available to print | N/A | Mounts and aligns the new-board panel switches and bezel LEDs. |
 
 This switch is SPDT `ON-NONE-ON` and needs a `6.35 mm` mounting hole in the
 new-board panel. Orient its anti-rotation key for access and wire-wrap
 clearance. One purchased switch remains as a spare.
+
+The `10TC405` switches are the standard single-circuit controls for this
+board. Do not substitute the SPDT mode selector with one: it must provide the
+three `MANUAL / DISABLED / AUTO` positions.
 
 Print the holder set as two `4-bit-switcher` modules plus one each of
 `switches-indicator-four`, `led-indicator-2pb-switch`, `led-indicator-four`,
@@ -45,11 +51,10 @@ only the carrier placement and attachment need adapting to the Vector board.
 The new-board `WRITE` button is mode-gated: it writes manually in `MANUAL` and
 performs `LOAD TARGET / START` in `AUTO`.
 
-For the replacement board, use the same normally-closed, open-on-press
-connection as `NEXT ADDRESS`: the button input is grounded while released, and
-a `10k` pull-up makes it high when pressed. Debounce it with `100nF` to ground
-and use the `74LS14` to produce an active-low press event. The `WRITE` button
-is the same stocked part and has this confirmed contact polarity.
+Wire the normally-open `WRITE` contact between `+5V` and its button input. A
+`10k` pull-down holds that input low while released; pressing drives it high.
+Debounce the input with `100nF` to ground and use the `74LS14` to produce an
+active-low press event.
 
 ## Still Needed Outside the Basket
 
@@ -67,7 +72,7 @@ is the same stocked part and has this confirmed contact polarity.
 | 3 | LED resistor | `330 ohm`, stock has 90 | LED current limit for 5 V NPN low-side drivers |
 | 3 | Base-emitter pull-down resistor | `100k`, optional but recommended | Keeps LED drivers off during reset/power-up |
 | 2 | Mode-input pull-down resistor | `10k`, in basket | Defines `MANUAL=0` and `AUTO=0` in the selector's centre position |
-| 1 | Write-button debounce network | `10k` pull-up plus `100nF` to ground | For a normally-closed, open-on-press button; produces one clean auto-mode target/start event. |
+| 1 | Write-button debounce network | `10k` pull-down plus `100nF` to ground | For the normally-open `OFF-(ON)` button; produces one clean auto-mode target/start event. |
 | as needed | DIP and wire-wrap sockets | 8-, 14-, 16-, 18-, and 24-pin units, per the socket plan | Required for the new-board base, Phase 1 ICs, and local passive strips. |
 | as needed | Wire-wrap wire | AWG28 Jonard: red, black, white, yellow, blue; plus green Belden | New-board power, data, control, and panel-indication wiring. |
 

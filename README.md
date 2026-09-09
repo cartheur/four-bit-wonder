@@ -187,12 +187,11 @@ Use the available AWG28 wire-wrap colors consistently:
 ### Pushbutton Contact Convention
 
 The new-board `WRITE` button and optional Phase 2 `NEXT ADDRESS` button use
-the same stocked pushbutton: **normally closed, open on press**. Wire each
-contact between its logic input and ground, with a `10k` pull-up and `100nF`
-capacitor from that input to ground. The released contact holds the input low;
-pressing opens it so the pull-up takes it high. A `74LS14` then produces the
-active-low press event used by the controller. No normally-open replacement
-pushbuttons are required.
+the same E-Switch [`PS1024`](datasheets/PS1024.pdf), circuit A: **OFF-(ON)**
+(normally open; closed while pressed). Wire each contact between `+5V` and its
+logic input, with a `10k` pull-down and `100nF` capacitor from that input to
+ground. The released contact holds the input low; pressing drives it high. A
+`74LS14` then produces the active-low press event used by the controller.
 
 See [the Machine Autonomous Version](machine-autonomous-version.md) for the
 current operating scope, [the Phase 1 BOM](phase-one-bom.md) for the first

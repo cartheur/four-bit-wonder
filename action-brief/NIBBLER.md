@@ -29,7 +29,7 @@ power-on contents must be treated as unknown.
 | 4 | 4.7k ohm resistors | RAM7400 per-bit feedback/data interface. |
 | 4 | `1N4148` diodes | Isolate each latch output from its data input path. |
 | 2 | 100nF ceramic capacitors | Local decoupling, placed across the latch sockets. |
-| 1 | Normally-closed, open-on-press pushbutton | Shared latch/write pulse. |
+| 1 | Normally-open, close-on-press pushbutton | Shared latch/write pulse; the stocked E-Switch `PS1024`, circuit A (`OFF-(ON)`), is suitable. |
 | 1 | Small separate perfboard or breadboard section | Keeps this experimental module reversible. |
 
 Use the proven per-bit circuit in the [RAM7400 project](https://github.com/cartheur-dot/RAM7400).
