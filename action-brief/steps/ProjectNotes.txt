@@ -163,4 +163,5 @@ Ideal game ttl
     1845: Comparator circuit is staged and ready to be added to the board. Haden showed me that what had been done was a total waste, given the status of the environments. So I find myself here...and permanent-like.
 15.09.2026
     1153: Have added the assembly parts for the comparator circuit. Next session to wire-in the 74LS85, NPNs, and LED resistors.
+    1600: Circuit contacts are diagrammed and ready to wrap.
     
