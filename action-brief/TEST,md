@@ -20,3 +20,7 @@ Write a known 4-bit value to one address, return to read mode, select that addre
 | `0101` (5) | `0100` (4) | Yellow HIGH / DECREASE |
 
 Only one LED should be illuminated at a time. Test several patterns, especially `0000`, `1111`, and cases differing in only one bit. The LEDs may be indeterminate while writing or when the SRAM is deselected.
+
+_Done_
+
+Once the continuity checks pass and the three read-mode comparisons produce the expected green, red, and yellow outcomes, the comparator addition is complete and working. Document the tested address and values, then call it `done`.
