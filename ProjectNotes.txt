@@ -1,0 +1,6 @@
+September 2026
+Additions to the 'four-bit wonder' board
+
+15.09.2026
+    1153: Have added the assembly parts for the comparator circuit. Next session to wire-in the 74LS85, NPNs, and LED resistors.
+    
