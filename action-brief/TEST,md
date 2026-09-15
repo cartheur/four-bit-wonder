@@ -1,0 +1,22 @@
+## Test after wiring is wrapped
+
+After wiring but before inserting the 74LS85:
+
+1. With power off, check there is no short between +5 V and GND.
+2. Confirm each transistor:
+   - **E** → GND
+   - **C** → its LED cathode
+   - **B** → its own 10 kΩ resistor
+3. Confirm no connection exists between the switch-side B-input wires and the MM2114A data-side A-input wires.
+
+Then insert the 74LS85 and test in SRAM read mode: `/CS` low/active and `/WE` high.
+
+Write a known 4-bit value to one address, return to read mode, select that address, and try these targets:
+
+| SRAM word | Switch word | Expected LED |
+|---|---:|---|
+| `0101` (5) | `0101` (5) | Red MATCH |
+| `0101` (5) | `0110` (6) | Green LOW / INCREASE |
+| `0101` (5) | `0100` (4) | Yellow HIGH / DECREASE |
+
+Only one LED should be illuminated at a time. Test several patterns, especially `0000`, `1111`, and cases differing in only one bit. The LEDs may be indeterminate while writing or when the SRAM is deselected.
