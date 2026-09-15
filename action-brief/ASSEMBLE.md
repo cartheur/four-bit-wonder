@@ -2,6 +2,35 @@
 
 ![Comparator wiring pictogram](../images/comparator-wiring.svg)
 
+_Summary_
+
+```
+- `74LS85 A0` (pin 10) → `MM2114A I/O1 / DQ1` (pin 14)
+- `74LS85 A1` (pin 12) → `MM2114A I/O2 / DQ2` (pin 13)
+- `74LS85 A2` (pin 13) → `MM2114A I/O3 / DQ3` (pin 12)
+- `74LS85 A3` (pin 15) → `MM2114A I/O4 / DQ4` (pin 11)
+
+- `74LS85 B0` (pin 9) → data-switch bit 0, switch side
+- `74LS85 B1` (pin 11) → data-switch bit 1, switch side
+- `74LS85 B2` (pin 14) → data-switch bit 2, switch side
+- `74LS85 B3` (pin 1) → data-switch bit 3, switch side
+
+- `74LS85 VCC` (pin 16) → +5 V
+- `74LS85 GND` (pin 8) → GND
+- 100 nF capacitor between pins 16 and 8
+- `A<B IN` (pin 2) → GND
+- `A=B IN` (pin 3) → +5 V
+- `A>B IN` (pin 4) → GND
+
+LED drivers — for each stocked 2N2222A, use the verified lead designations **E–C–B**:
+
+- **Green / LOW:** `74LS85 A<B OUT` (pin 7) → 10 kΩ → 2N2222A **B**; **E** → GND; **C** → green LED cathode. Green LED anode → 550 Ω → +5 V.
+- **Red / MATCH:** `74LS85 A=B OUT` (pin 6) → 10 kΩ → 2N2222A **B**; **E** → GND; **C** → red LED cathode. Red LED anode → 550 Ω → +5 V.
+- **Yellow / HIGH:** `74LS85 A>B OUT` (pin 5) → 10 kΩ → 2N2222A **B**; **E** → GND; **C** → yellow LED cathode. Yellow LED anode → 550 Ω → +5 V.
+
+Optionally place 100 kΩ from each transistor **B** to **E**.
+```
+
 1. **Gather parts.**  
    Use one `74LS85`, 18-pin socket, 100nF ceramic capacitor, three LEDs (red/yellow/green), three stocked `2N2222A` TO-92 transistors, three `10k` base resistors, three optional `100k` base-to-emitter resistors, and three `550 ohm` LED resistors. With the flat face toward you and leads down, each stocked transistor is `emitter - base - collector`.
 
